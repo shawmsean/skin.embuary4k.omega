@@ -92,6 +92,10 @@
 		<value condition="!String.IsEmpty(Skin.String(color_player_accent)) + !String.IsEqual(Skin.String(color_player_accent),None)">$INFO[Skin.String(color_player_accent)]</value>
 		<value>player_osd_color</value>
 	</variable>
+	<variable name="Action_MusicOSD_CommentPlugin">
+		<value condition="String.IsEqual(Window(10000).Property(nc_music_plugin_id),plugin.audio.musicJH)">plugin.audio.musicJH</value>
+		<value>plugin.audio.music</value>
+	</variable>
 	<variable name="ThumbFallbackColor">
 		<value condition="!String.IsEmpty(Skin.String(color_thumb_fallback)) + !String.IsEqual(Skin.String(color_thumb_fallback),None)">$INFO[Skin.String(color_thumb_fallback)]</value>
 		<value>thumb_background_fallback</value>

@@ -94,7 +94,10 @@
 						<param name="type" value="comment"/>
 					</include>
 					<onclick>Dialog.Close(all,true)</onclick>
-					<onclick>ActivateWindow(10025,plugin://plugin.audio.music/current_song_comments/0)</onclick>
+					<onclick>SetProperty(bili_comment_content_url,plugin://$VAR[Action_MusicOSD_CommentPlugin]/current_song_comments/0,10000)</onclick>
+					<onclick>SetProperty(bili_hot_comment_url,plugin://$VAR[Action_MusicOSD_CommentPlugin]/hot_song_comments/0/,10000)</onclick>
+					<onclick>SetProperty(bili_latest_comment_url,plugin://$VAR[Action_MusicOSD_CommentPlugin]/latest_song_comments/0/,10000)</onclick>
+					<onclick>ActivateWindow(1142)</onclick>
 				</control>
 				<control type="button" id="613">
 					<include content="PlayerButtons">

@@ -2671,46 +2671,16 @@
 			<thumb />
 			<property name="labelID">14022</property>
 			<property name="defaultID">embuary_musichub_library</property>
-			<visible>[False] + String.IsEqual(Container(100).ListItem.Property(submenuVisibility),musichub)</visible>
-			<onclick>noop</onclick>
+			<property name="isDefault">true</property>
+			<onclick>ActivateWindow(music,musicdb://root,return)</onclick>
+			<property name="path">ActivateWindow(music,musicdb://root,return)</property>
+			<property name="list">musicdb://root</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(100).ListItem.Property(submenuVisibility),musichub)</visible>
+			<property name="group">musichub</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
-			<property name="mainmenuid">79</property>
-			<label>music</label>
-			<label2>音乐插件</label2>
-			<icon>DefaultShortcut.png</icon>
-			<thumb>thumb</thumb>
-			<property name="labelID">plugin.audio.music</property>
-			<property name="defaultID">plugin.audio.music</property>
-			<property name="translatedPath">ActivateWindow(Music,"plugin://plugin.audio.music",return)</property>
-			<onclick>ActivateWindow(Music,"plugin://plugin.audio.music",return)</onclick>
-			<property name="path">ActivateWindow(Music,"plugin://plugin.audio.music",return)</property>
-			<property name="list">plugin://plugin.audio.music</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(100).ListItem.Property(submenuVisibility),musichub)</visible>
-			<property name="group">musichub</property>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="7">
-			<property name="id">$NUMBER[7]</property>
-			<property name="mainmenuid">79</property>
-			<label>music</label>
-			<label2>Custom item</label2>
-			<icon>DefaultShortcut.png</icon>
-			<thumb>thumb</thumb>
-			<property name="labelID">plugin.audio.music/recommend_songs/</property>
-			<property name="defaultID">plugin.audio.music</property>
-			<property name="translatedPath">ActivateWindow(Music,"plugin://plugin.audio.music",return)</property>
-			<onclick>ActivateWindow(Music,"plugin://plugin.audio.music/recommend_songs/",return)</onclick>
-			<property name="path">ActivateWindow(Music,"plugin://plugin.audio.music/recommend_songs/",return)</property>
-			<property name="list">plugin://plugin.audio.music/recommend_songs/</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(100).ListItem.Property(submenuVisibility),musichub)</visible>
-			<property name="group">musichub</property>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="8">
-			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">79</property>
 			<label>$LOCALIZE[20389]</label>
 			<label2 />
@@ -2727,8 +2697,8 @@
 			<property name="group">musichub</property>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="9">
-			<property name="id">$NUMBER[9]</property>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">79</property>
 			<label>$VAR[PartyModeButton]</label>
 			<label2 />
@@ -2746,8 +2716,8 @@
 			<property name="group">musichub</property>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="10">
-			<property name="id">$NUMBER[10]</property>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">79</property>
 			<label>$LOCALIZE[31240]</label>
 			<label2 />
@@ -2755,12 +2725,17 @@
 			<thumb />
 			<property name="labelID">31240</property>
 			<property name="defaultID">embuary_musichub_embycon_artists</property>
-			<visible>[False] + String.IsEqual(Container(100).ListItem.Property(submenuVisibility),musichub)</visible>
-			<onclick>noop</onclick>
+			<property name="isDefault">true</property>
+			<visible>[System.HasAddon(plugin.video.embycon)] + String.IsEqual(Container(100).ListItem.Property(submenuVisibility),musichub)</visible>
+			<onclick>ActivateWindow(music,plugin://plugin.video.embycon/?media_type=MusicArtists&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fArtists%2fAlbumArtists%3fRecursive%3dtrue%26ImageTypeLimit%3d1%26EnableImageTypes%3dPrimary%2cBackdrop%2cBanner%2cThumb%26format%3djson,return)</onclick>
+			<property name="path">ActivateWindow(music,plugin://plugin.video.embycon/?media_type=MusicArtists&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fArtists%2fAlbumArtists%3fRecursive%3dtrue%26ImageTypeLimit%3d1%26EnableImageTypes%3dPrimary%2cBackdrop%2cBanner%2cThumb%26format%3djson,return)</property>
+			<property name="list">plugin://plugin.video.embycon/?media_type=MusicArtists&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fArtists%2fAlbumArtists%3fRecursive%3dtrue%26ImageTypeLimit%3d1%26EnableImageTypes%3dPrimary%2cBackdrop%2cBanner%2cThumb%26format%3djson</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">musichub</property>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="11">
-			<property name="id">$NUMBER[11]</property>
+		<item id="9">
+			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">79</property>
 			<label>$LOCALIZE[31241]</label>
 			<label2 />
@@ -2768,8 +2743,13 @@
 			<thumb />
 			<property name="labelID">31241</property>
 			<property name="defaultID">embuary_musichub_embycon_albums</property>
-			<visible>[False] + String.IsEqual(Container(100).ListItem.Property(submenuVisibility),musichub)</visible>
-			<onclick>noop</onclick>
+			<property name="isDefault">true</property>
+			<visible>[System.HasAddon(plugin.video.embycon)] + String.IsEqual(Container(100).ListItem.Property(submenuVisibility),musichub)</visible>
+			<onclick>ActivateWindow(music,plugin://plugin.video.embycon/?media_type=MusicAlbums&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fRecursive%3dtrue%26IncludeItemTypes%3dMusicAlbum%26ImageTypeLimit%3d1%26EnableImageTypes%3dPrimary%2cBackdrop%2cBanner%2cThumb%26format%3djson,return)</onclick>
+			<property name="path">ActivateWindow(music,plugin://plugin.video.embycon/?media_type=MusicAlbums&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fRecursive%3dtrue%26IncludeItemTypes%3dMusicAlbum%26ImageTypeLimit%3d1%26EnableImageTypes%3dPrimary%2cBackdrop%2cBanner%2cThumb%26format%3djson,return)</property>
+			<property name="list">plugin://plugin.video.embycon/?media_type=MusicAlbums&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fRecursive%3dtrue%26IncludeItemTypes%3dMusicAlbum%26ImageTypeLimit%3d1%26EnableImageTypes%3dPrimary%2cBackdrop%2cBanner%2cThumb%26format%3djson</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">musichub</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="1">
@@ -2836,6 +2816,23 @@
 			<onclick>ActivateWindow(Music,"plugin://plugin.audio.music/tunehub_toplists_platform/qq/",return)</onclick>
 			<property name="path">ActivateWindow(Music,"plugin://plugin.audio.music/tunehub_toplists_platform/qq/",return)</property>
 			<property name="list">plugin://plugin.audio.music/tunehub_toplists_platform/qq/</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(100).ListItem.Property(submenuVisibility),customhub)</visible>
+			<property name="group">customhub</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">80</property>
+			<label>music</label>
+			<label2>音乐插件</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>thumb</thumb>
+			<property name="labelID">plugin.audio.music</property>
+			<property name="defaultID">plugin.audio.music</property>
+			<property name="translatedPath">ActivateWindow(Music,"plugin://plugin.audio.music",return)</property>
+			<onclick>ActivateWindow(Music,"plugin://plugin.audio.music",return)</onclick>
+			<property name="path">ActivateWindow(Music,"plugin://plugin.audio.music",return)</property>
+			<property name="list">plugin://plugin.audio.music</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(100).ListItem.Property(submenuVisibility),customhub)</visible>
 			<property name="group">customhub</property>
 			<property name="isSubmenu">True</property>
@@ -4312,46 +4309,16 @@
 			<thumb />
 			<property name="labelID">14022</property>
 			<property name="defaultID">embuary_musichub_library</property>
-			<visible>False</visible>
-			<onclick>noop</onclick>
+			<property name="isDefault">true</property>
+			<onclick>ActivateWindow(music,musicdb://root,return)</onclick>
+			<property name="path">ActivateWindow(music,musicdb://root,return)</property>
+			<property name="list">musicdb://root</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">musichub</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
-			<property name="mainmenuid">79</property>
-			<label>music</label>
-			<label2>音乐插件</label2>
-			<icon>DefaultShortcut.png</icon>
-			<thumb>thumb</thumb>
-			<property name="labelID">plugin.audio.music</property>
-			<property name="defaultID">plugin.audio.music</property>
-			<property name="translatedPath">ActivateWindow(Music,"plugin://plugin.audio.music",return)</property>
-			<onclick>ActivateWindow(Music,"plugin://plugin.audio.music",return)</onclick>
-			<property name="path">ActivateWindow(Music,"plugin://plugin.audio.music",return)</property>
-			<property name="list">plugin://plugin.audio.music</property>
-			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
-			<property name="group">musichub</property>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="7">
-			<property name="id">$NUMBER[7]</property>
-			<property name="mainmenuid">79</property>
-			<label>music</label>
-			<label2>Custom item</label2>
-			<icon>DefaultShortcut.png</icon>
-			<thumb>thumb</thumb>
-			<property name="labelID">plugin.audio.music/recommend_songs/</property>
-			<property name="defaultID">plugin.audio.music</property>
-			<property name="translatedPath">ActivateWindow(Music,"plugin://plugin.audio.music",return)</property>
-			<onclick>ActivateWindow(Music,"plugin://plugin.audio.music/recommend_songs/",return)</onclick>
-			<property name="path">ActivateWindow(Music,"plugin://plugin.audio.music/recommend_songs/",return)</property>
-			<property name="list">plugin://plugin.audio.music/recommend_songs/</property>
-			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
-			<property name="group">musichub</property>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="8">
-			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">79</property>
 			<label>$LOCALIZE[20389]</label>
 			<label2 />
@@ -4368,8 +4335,8 @@
 			<property name="group">musichub</property>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="9">
-			<property name="id">$NUMBER[9]</property>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">79</property>
 			<label>$VAR[PartyModeButton]</label>
 			<label2 />
@@ -4387,8 +4354,8 @@
 			<property name="group">musichub</property>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="10">
-			<property name="id">$NUMBER[10]</property>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">79</property>
 			<label>$LOCALIZE[31240]</label>
 			<label2 />
@@ -4396,12 +4363,17 @@
 			<thumb />
 			<property name="labelID">31240</property>
 			<property name="defaultID">embuary_musichub_embycon_artists</property>
-			<visible>False</visible>
-			<onclick>noop</onclick>
+			<property name="isDefault">true</property>
+			<visible>System.HasAddon(plugin.video.embycon)</visible>
+			<onclick>ActivateWindow(music,plugin://plugin.video.embycon/?media_type=MusicArtists&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fArtists%2fAlbumArtists%3fRecursive%3dtrue%26ImageTypeLimit%3d1%26EnableImageTypes%3dPrimary%2cBackdrop%2cBanner%2cThumb%26format%3djson,return)</onclick>
+			<property name="path">ActivateWindow(music,plugin://plugin.video.embycon/?media_type=MusicArtists&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fArtists%2fAlbumArtists%3fRecursive%3dtrue%26ImageTypeLimit%3d1%26EnableImageTypes%3dPrimary%2cBackdrop%2cBanner%2cThumb%26format%3djson,return)</property>
+			<property name="list">plugin://plugin.video.embycon/?media_type=MusicArtists&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fArtists%2fAlbumArtists%3fRecursive%3dtrue%26ImageTypeLimit%3d1%26EnableImageTypes%3dPrimary%2cBackdrop%2cBanner%2cThumb%26format%3djson</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">musichub</property>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="11">
-			<property name="id">$NUMBER[11]</property>
+		<item id="9">
+			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">79</property>
 			<label>$LOCALIZE[31241]</label>
 			<label2 />
@@ -4409,8 +4381,13 @@
 			<thumb />
 			<property name="labelID">31241</property>
 			<property name="defaultID">embuary_musichub_embycon_albums</property>
-			<visible>False</visible>
-			<onclick>noop</onclick>
+			<property name="isDefault">true</property>
+			<visible>System.HasAddon(plugin.video.embycon)</visible>
+			<onclick>ActivateWindow(music,plugin://plugin.video.embycon/?media_type=MusicAlbums&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fRecursive%3dtrue%26IncludeItemTypes%3dMusicAlbum%26ImageTypeLimit%3d1%26EnableImageTypes%3dPrimary%2cBackdrop%2cBanner%2cThumb%26format%3djson,return)</onclick>
+			<property name="path">ActivateWindow(music,plugin://plugin.video.embycon/?media_type=MusicAlbums&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fRecursive%3dtrue%26IncludeItemTypes%3dMusicAlbum%26ImageTypeLimit%3d1%26EnableImageTypes%3dPrimary%2cBackdrop%2cBanner%2cThumb%26format%3djson,return)</property>
+			<property name="list">plugin://plugin.video.embycon/?media_type=MusicAlbums&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fRecursive%3dtrue%26IncludeItemTypes%3dMusicAlbum%26ImageTypeLimit%3d1%26EnableImageTypes%3dPrimary%2cBackdrop%2cBanner%2cThumb%26format%3djson</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">musichub</property>
 			<property name="isSubmenu">True</property>
 		</item>
 	</include>
@@ -4496,46 +4473,16 @@
 			<thumb />
 			<property name="labelID">14022</property>
 			<property name="defaultID">embuary_musichub_library</property>
-			<visible>[False] + String.IsEqual(Window(10000).Property(submenuVisibility),musichub)</visible>
-			<onclick>noop</onclick>
+			<property name="isDefault">true</property>
+			<onclick>ActivateWindow(music,musicdb://root,return)</onclick>
+			<property name="path">ActivateWindow(music,musicdb://root,return)</property>
+			<property name="list">musicdb://root</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),musichub)</visible>
+			<property name="group">musichub</property>
 			<property name="isSubmenu">True</property>
 		</item>
 		<item id="6">
 			<property name="id">$NUMBER[6]</property>
-			<property name="mainmenuid">79</property>
-			<label>music</label>
-			<label2>音乐插件</label2>
-			<icon>DefaultShortcut.png</icon>
-			<thumb>thumb</thumb>
-			<property name="labelID">plugin.audio.music</property>
-			<property name="defaultID">plugin.audio.music</property>
-			<property name="translatedPath">ActivateWindow(Music,"plugin://plugin.audio.music",return)</property>
-			<onclick>ActivateWindow(Music,"plugin://plugin.audio.music",return)</onclick>
-			<property name="path">ActivateWindow(Music,"plugin://plugin.audio.music",return)</property>
-			<property name="list">plugin://plugin.audio.music</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),musichub)</visible>
-			<property name="group">musichub</property>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="7">
-			<property name="id">$NUMBER[7]</property>
-			<property name="mainmenuid">79</property>
-			<label>music</label>
-			<label2>Custom item</label2>
-			<icon>DefaultShortcut.png</icon>
-			<thumb>thumb</thumb>
-			<property name="labelID">plugin.audio.music/recommend_songs/</property>
-			<property name="defaultID">plugin.audio.music</property>
-			<property name="translatedPath">ActivateWindow(Music,"plugin://plugin.audio.music",return)</property>
-			<onclick>ActivateWindow(Music,"plugin://plugin.audio.music/recommend_songs/",return)</onclick>
-			<property name="path">ActivateWindow(Music,"plugin://plugin.audio.music/recommend_songs/",return)</property>
-			<property name="list">plugin://plugin.audio.music/recommend_songs/</property>
-			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),musichub)</visible>
-			<property name="group">musichub</property>
-			<property name="isSubmenu">True</property>
-		</item>
-		<item id="8">
-			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">79</property>
 			<label>$LOCALIZE[20389]</label>
 			<label2 />
@@ -4552,8 +4499,8 @@
 			<property name="group">musichub</property>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="9">
-			<property name="id">$NUMBER[9]</property>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
 			<property name="mainmenuid">79</property>
 			<label>$VAR[PartyModeButton]</label>
 			<label2 />
@@ -4571,8 +4518,8 @@
 			<property name="group">musichub</property>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="10">
-			<property name="id">$NUMBER[10]</property>
+		<item id="8">
+			<property name="id">$NUMBER[8]</property>
 			<property name="mainmenuid">79</property>
 			<label>$LOCALIZE[31240]</label>
 			<label2 />
@@ -4580,12 +4527,17 @@
 			<thumb />
 			<property name="labelID">31240</property>
 			<property name="defaultID">embuary_musichub_embycon_artists</property>
-			<visible>[False] + String.IsEqual(Window(10000).Property(submenuVisibility),musichub)</visible>
-			<onclick>noop</onclick>
+			<property name="isDefault">true</property>
+			<visible>[System.HasAddon(plugin.video.embycon)] + String.IsEqual(Window(10000).Property(submenuVisibility),musichub)</visible>
+			<onclick>ActivateWindow(music,plugin://plugin.video.embycon/?media_type=MusicArtists&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fArtists%2fAlbumArtists%3fRecursive%3dtrue%26ImageTypeLimit%3d1%26EnableImageTypes%3dPrimary%2cBackdrop%2cBanner%2cThumb%26format%3djson,return)</onclick>
+			<property name="path">ActivateWindow(music,plugin://plugin.video.embycon/?media_type=MusicArtists&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fArtists%2fAlbumArtists%3fRecursive%3dtrue%26ImageTypeLimit%3d1%26EnableImageTypes%3dPrimary%2cBackdrop%2cBanner%2cThumb%26format%3djson,return)</property>
+			<property name="list">plugin://plugin.video.embycon/?media_type=MusicArtists&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fArtists%2fAlbumArtists%3fRecursive%3dtrue%26ImageTypeLimit%3d1%26EnableImageTypes%3dPrimary%2cBackdrop%2cBanner%2cThumb%26format%3djson</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">musichub</property>
 			<property name="isSubmenu">True</property>
 		</item>
-		<item id="11">
-			<property name="id">$NUMBER[11]</property>
+		<item id="9">
+			<property name="id">$NUMBER[9]</property>
 			<property name="mainmenuid">79</property>
 			<label>$LOCALIZE[31241]</label>
 			<label2 />
@@ -4593,8 +4545,13 @@
 			<thumb />
 			<property name="labelID">31241</property>
 			<property name="defaultID">embuary_musichub_embycon_albums</property>
-			<visible>[False] + String.IsEqual(Window(10000).Property(submenuVisibility),musichub)</visible>
-			<onclick>noop</onclick>
+			<property name="isDefault">true</property>
+			<visible>[System.HasAddon(plugin.video.embycon)] + String.IsEqual(Window(10000).Property(submenuVisibility),musichub)</visible>
+			<onclick>ActivateWindow(music,plugin://plugin.video.embycon/?media_type=MusicAlbums&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fRecursive%3dtrue%26IncludeItemTypes%3dMusicAlbum%26ImageTypeLimit%3d1%26EnableImageTypes%3dPrimary%2cBackdrop%2cBanner%2cThumb%26format%3djson,return)</onclick>
+			<property name="path">ActivateWindow(music,plugin://plugin.video.embycon/?media_type=MusicAlbums&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fRecursive%3dtrue%26IncludeItemTypes%3dMusicAlbum%26ImageTypeLimit%3d1%26EnableImageTypes%3dPrimary%2cBackdrop%2cBanner%2cThumb%26format%3djson,return)</property>
+			<property name="list">plugin://plugin.video.embycon/?media_type=MusicAlbums&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fRecursive%3dtrue%26IncludeItemTypes%3dMusicAlbum%26ImageTypeLimit%3d1%26EnableImageTypes%3dPrimary%2cBackdrop%2cBanner%2cThumb%26format%3djson</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">musichub</property>
 			<property name="isSubmenu">True</property>
 		</item>
 	</include>
@@ -4667,6 +4624,23 @@
 			<property name="group">customhub</property>
 			<property name="isSubmenu">True</property>
 		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">80</property>
+			<label>music</label>
+			<label2>音乐插件</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>thumb</thumb>
+			<property name="labelID">plugin.audio.music</property>
+			<property name="defaultID">plugin.audio.music</property>
+			<property name="translatedPath">ActivateWindow(Music,"plugin://plugin.audio.music",return)</property>
+			<onclick>ActivateWindow(Music,"plugin://plugin.audio.music",return)</onclick>
+			<property name="path">ActivateWindow(Music,"plugin://plugin.audio.music",return)</property>
+			<property name="list">plugin://plugin.audio.music</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">customhub</property>
+			<property name="isSubmenu">True</property>
+		</item>
 	</include>
 	<include name="skinshortcuts-group-alt-customhub">
 		<item id="1">
@@ -4733,6 +4707,23 @@
 			<onclick>ActivateWindow(Music,"plugin://plugin.audio.music/tunehub_toplists_platform/qq/",return)</onclick>
 			<property name="path">ActivateWindow(Music,"plugin://plugin.audio.music/tunehub_toplists_platform/qq/",return)</property>
 			<property name="list">plugin://plugin.audio.music/tunehub_toplists_platform/qq/</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),customhub)</visible>
+			<property name="group">customhub</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">80</property>
+			<label>music</label>
+			<label2>音乐插件</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>thumb</thumb>
+			<property name="labelID">plugin.audio.music</property>
+			<property name="defaultID">plugin.audio.music</property>
+			<property name="translatedPath">ActivateWindow(Music,"plugin://plugin.audio.music",return)</property>
+			<onclick>ActivateWindow(Music,"plugin://plugin.audio.music",return)</onclick>
+			<property name="path">ActivateWindow(Music,"plugin://plugin.audio.music",return)</property>
+			<property name="list">plugin://plugin.audio.music</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),customhub)</visible>
 			<property name="group">customhub</property>
 			<property name="isSubmenu">True</property>
