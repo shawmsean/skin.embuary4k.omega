@@ -8,61 +8,62 @@
     <controls>
 
         <control type="image">
+            <visible>!Skin.HasSetting(CommentOverlayDisabled)</visible>
             <texture colordiffuse="B2000000">common/black.png</texture>
         </control>
 
         <control type="group">
-            <left>80</left>
-            <right>80</right>
-            <height>720</height>
-            <bottom>100</bottom>
+            <left>160</left>
+            <right>160</right>
+            <height>1440</height>
+            <centertop>50%</centertop>
 
             <control type="group">
-                <height>90</height>
+                <height>180</height>
 
                 <control type="label">
-                    <left>0</left><top>0</top><width>100%</width><height>40</height>
-                    <font>Reg24</font><textcolor>text_white</textcolor>
+                    <left>0</left><top>0</top><width>100%</width><height>80</height>
+                    <font>Reg37</font><textcolor>text_white</textcolor>
                     <label>$INFO[MusicPlayer.Title,, 的评论]</label>
                 </control>
 
                 <control type="button" id="9811">
-                    <left>0</left><top>45</top><width>120</width><height>40</height>
+                    <left>0</left><top>90</top><width>240</width><height>80</height>
                     <label>热门</label>
-                    <font>Reg20</font><textcolor>text_sublabel</textcolor><focusedcolor>text_white</focusedcolor>
-                    <texturefocus colordiffuse="$VAR[PlayerAccentColor]" border="8">common/box.png</texturefocus>
-                    <texturenofocus colordiffuse="panel_background" border="8">common/box.png</texturenofocus>
+                    <font>Reg28</font><textcolor>text_sublabel</textcolor><focusedcolor>text_white</focusedcolor>
+                    <texturefocus colordiffuse="$VAR[PlayerAccentColor]" border="16">common/box.png</texturefocus>
+                    <texturenofocus colordiffuse="panel_background" border="16">common/box.png</texturenofocus>
                     <onclick>SetProperty(bili_comment_tab,hot,Home)</onclick>
                     <onclick>SetFocus(9801)</onclick>
                     <visible>String.IsEqual(Window(Home).Property(bili_comment_tab),hot)</visible>
                 </control>
                 <control type="button" id="9811">
-                    <left>0</left><top>45</top><width>120</width><height>40</height>
+                    <left>0</left><top>90</top><width>240</width><height>80</height>
                     <label>热门</label>
-                    <font>Reg20</font><textcolor>text_sublabel</textcolor><focusedcolor>text_white</focusedcolor>
-                    <texturefocus colordiffuse="$VAR[PlayerAccentColor]" border="8">common/box.png</texturefocus>
-                    <texturenofocus colordiffuse="00ffffff" border="8">common/box.png</texturenofocus>
+                    <font>Reg28</font><textcolor>text_sublabel</textcolor><focusedcolor>text_white</focusedcolor>
+                    <texturefocus colordiffuse="$VAR[PlayerAccentColor]" border="16">common/box.png</texturefocus>
+                    <texturenofocus colordiffuse="00ffffff" border="16">common/box.png</texturenofocus>
                     <onclick>SetProperty(bili_comment_tab,hot,Home)</onclick>
                     <onclick>SetFocus(9801)</onclick>
                     <visible>!String.IsEqual(Window(Home).Property(bili_comment_tab),hot)</visible>
                 </control>
 
                 <control type="button" id="9812">
-                    <left>130</left><top>45</top><width>120</width><height>40</height>
+                    <left>260</left><top>90</top><width>240</width><height>80</height>
                     <label>最新</label>
-                    <font>Reg20</font><textcolor>text_sublabel</textcolor><focusedcolor>text_white</focusedcolor>
-                    <texturefocus colordiffuse="$VAR[PlayerAccentColor]" border="8">common/box.png</texturefocus>
-                    <texturenofocus colordiffuse="panel_background" border="8">common/box.png</texturenofocus>
+                    <font>Reg28</font><textcolor>text_sublabel</textcolor><focusedcolor>text_white</focusedcolor>
+                    <texturefocus colordiffuse="$VAR[PlayerAccentColor]" border="16">common/box.png</texturefocus>
+                    <texturenofocus colordiffuse="panel_background" border="16">common/box.png</texturenofocus>
                     <onclick>SetProperty(bili_comment_tab,latest,Home)</onclick>
                     <onclick>SetFocus(9802)</onclick>
                     <visible>String.IsEqual(Window(Home).Property(bili_comment_tab),latest)</visible>
                 </control>
                 <control type="button" id="9812">
-                    <left>130</left><top>45</top><width>120</width><height>40</height>
+                    <left>260</left><top>90</top><width>240</width><height>80</height>
                     <label>最新</label>
-                    <font>Reg20</font><textcolor>text_sublabel</textcolor><focusedcolor>text_white</focusedcolor>
-                    <texturefocus colordiffuse="$VAR[PlayerAccentColor]" border="8">common/box.png</texturefocus>
-                    <texturenofocus colordiffuse="00ffffff" border="8">common/box.png</texturenofocus>
+                    <font>Reg28</font><textcolor>text_sublabel</textcolor><focusedcolor>text_white</focusedcolor>
+                    <texturefocus colordiffuse="$VAR[PlayerAccentColor]" border="16">common/box.png</texturefocus>
+                    <texturenofocus colordiffuse="00ffffff" border="16">common/box.png</texturenofocus>
                     <onclick>SetProperty(bili_comment_tab,latest,Home)</onclick>
                     <onclick>SetFocus(9802)</onclick>
                     <visible>!String.IsEqual(Window(Home).Property(bili_comment_tab),latest)</visible>
@@ -70,7 +71,7 @@
             </control>
 
             <control type="group">
-                <top>100</top>
+                <top>200</top>
                 <bottom>0</bottom>
 
                 <control type="fixedlist" id="9801">
@@ -96,97 +97,97 @@
                     <onclick condition="String.IsEmpty(Container(9801).ListItem.Property(next_page)) + !String.IsEmpty(Container(9801).ListItem.Property(comment_reply_summary))">AlarmClock(open_replies,ActivateWindow(1162),00:00,silent)</onclick>
                     <content>$INFO[Window(10000).Property(bili_hot_comment_url)]</content>
 
-                    <itemlayout width="420" height="350">
+                    <itemlayout width="420" height="700">
                         <control type="image">
                             <texture colordiffuse="panel_background" border="20">common/box.png</texture>
                         </control>
                         <control type="label">
-                            <left>16</left><top>10</top><width>auto</width><height>24</height>
-                            <font>Reg20</font><textcolor>text_sublabel</textcolor>
+                            <left>16</left><top>10</top><width>auto</width><height>40</height>
+                            <font>Reg22</font><textcolor>text_sublabel</textcolor>
                             <label>HOT</label>
                         </control>
                         <control type="image">
-                            <left>16</left><top>36</top><width>40</width><height>40</height>
+                            <left>16</left><top>56</top><width>64</width><height>64</height>
                             <texture background="true">$INFO[ListItem.Icon]</texture>
                             <aspectratio>keep</aspectratio>
                         </control>
                         <control type="label">
-                            <left>64</left><top>36</top><width>340</width><height>24</height>
-                            <font>Reg20</font><textcolor>text_white</textcolor>
+                            <left>92</left><top>56</top><width>310</width><height>40</height>
+                            <font>Reg22</font><textcolor>text_white</textcolor>
                             <label>$INFO[ListItem.Label]</label>
                         </control>
                         <control type="label">
-                            <left>64</left><top>58</top><width>340</width><height>20</height>
-                            <font>Reg16</font><textcolor>text_sublabel</textcolor>
+                            <left>92</left><top>92</top><width>310</width><height>32</height>
+                            <font>Reg18</font><textcolor>text_sublabel</textcolor>
                             <label>$INFO[ListItem.Property(comment_time)]$INFO[ListItem.Property(comment_location), | 来自,]</label>
                         </control>
                         <control type="textbox">
-                            <left>16</left><top>84</top><width>388</width><bottom>40</bottom>
-                            <font>Reg16</font><textcolor>white</textcolor>
+                            <left>16</left><top>132</top><width>388</width><bottom>60</bottom>
+                            <font>Reg18</font><textcolor>white</textcolor>
                             <label>$INFO[ListItem.Property(comment_content)]</label>
                             <autoscroll delay="6000" time="3000" repeat="10000">!Control.HasFocus(9801)</autoscroll>
                         </control>
                         <control type="label">
-                            <left>16</left><bottom>8</bottom><width>auto</width><height>20</height>
-                            <font>Reg16</font><textcolor>text_sublabel</textcolor>
+                            <left>16</left><bottom>8</bottom><width>auto</width><height>32</height>
+                            <font>Reg18</font><textcolor>text_sublabel</textcolor>
                             <label>$INFO[ListItem.Property(comment_liked_count),&#x2764; ,]$INFO[ListItem.Property(comment_reply_count), | , replies]</label>
                         </control>
                         <control type="label" condition="!String.IsEmpty(ListItem.Property(comment_reply_summary))">
-                            <left>16</left><bottom>28</bottom><width>388</width><height>20</height>
-                            <font>Reg16</font><textcolor>softgrey</textcolor>
+                            <left>16</left><bottom>40</bottom><width>388</width><height>32</height>
+                            <font>Reg18</font><textcolor>softgrey</textcolor>
                             <label>$INFO[ListItem.Property(comment_reply_summary),&#x21AA; ,]</label>
                         </control>
                         <control type="label">
-                            <left>20</left><top>0</top><width>388</width><height>300</height>
-                            <font>Reg24</font><textcolor>text_sublabel</textcolor>
+                            <left>20</left><top>0</top><width>388</width><height>600</height>
+                            <font>Reg28</font><textcolor>text_sublabel</textcolor>
                             <align>center</align><aligny>center</aligny>
                             <label>$INFO[ListItem.Property(next_page),加载更多,]</label>
                         </control>
                     </itemlayout>
 
-                    <focusedlayout width="420" height="350">
+                    <focusedlayout width="420" height="700">
                         <control type="image">
                             <texture colordiffuse="$VAR[PlayerAccentColor]" border="20">common/box.png</texture>
                         </control>
                         <control type="label">
-                            <left>16</left><top>10</top><width>auto</width><height>24</height>
-                            <font>Reg20</font><textcolor>selected</textcolor>
+                            <left>16</left><top>10</top><width>auto</width><height>40</height>
+                            <font>Reg22</font><textcolor>selected</textcolor>
                             <label>HOT</label>
                         </control>
                         <control type="image">
-                            <left>16</left><top>36</top><width>40</width><height>40</height>
+                            <left>16</left><top>56</top><width>64</width><height>64</height>
                             <texture background="true">$INFO[ListItem.Icon]</texture>
                             <aspectratio>keep</aspectratio>
                         </control>
                         <control type="label">
-                            <left>64</left><top>36</top><width>340</width><height>24</height>
-                            <font>Reg20</font><textcolor>selected</textcolor>
+                            <left>92</left><top>56</top><width>310</width><height>40</height>
+                            <font>Reg22</font><textcolor>selected</textcolor>
                             <label>$INFO[ListItem.Label]</label>
                         </control>
                         <control type="label">
-                            <left>64</left><top>58</top><width>340</width><height>20</height>
-                            <font>Reg16</font><textcolor>selected</textcolor>
+                            <left>92</left><top>92</top><width>310</width><height>32</height>
+                            <font>Reg18</font><textcolor>selected</textcolor>
                             <label>$INFO[ListItem.Property(comment_time)]$INFO[ListItem.Property(comment_location), | 来自,]</label>
                         </control>
                         <control type="textbox">
-                            <left>16</left><top>84</top><width>388</width><bottom>40</bottom>
-                            <font>Reg16</font><textcolor>white</textcolor>
+                            <left>16</left><top>132</top><width>388</width><bottom>60</bottom>
+                            <font>Reg18</font><textcolor>white</textcolor>
                             <label>$INFO[ListItem.Property(comment_content)]</label>
                             <autoscroll delay="6000" time="3000" repeat="10000">!Control.HasFocus(9801)</autoscroll>
                         </control>
                         <control type="label">
-                            <left>16</left><bottom>8</bottom><width>auto</width><height>20</height>
-                            <font>Reg16</font><textcolor>selected</textcolor>
+                            <left>16</left><bottom>8</bottom><width>auto</width><height>32</height>
+                            <font>Reg18</font><textcolor>selected</textcolor>
                             <label>$INFO[ListItem.Property(comment_liked_count),&#x2764; ,]$INFO[ListItem.Property(comment_reply_count), | , replies]</label>
                         </control>
                         <control type="label" condition="!String.IsEmpty(ListItem.Property(comment_reply_summary))">
-                            <left>16</left><bottom>28</bottom><width>388</width><height>20</height>
-                            <font>Reg16</font><textcolor>selected</textcolor>
+                            <left>16</left><bottom>40</bottom><width>388</width><height>32</height>
+                            <font>Reg18</font><textcolor>selected</textcolor>
                             <label>$INFO[ListItem.Property(comment_reply_summary),&#x21AA; ,]</label>
                         </control>
                         <control type="label">
-                            <left>20</left><top>0</top><width>388</width><height>300</height>
-                            <font>Reg24</font><textcolor>selected</textcolor>
+                            <left>20</left><top>0</top><width>388</width><height>600</height>
+                            <font>Reg28</font><textcolor>selected</textcolor>
                             <align>center</align><aligny>center</aligny>
                             <label>$INFO[ListItem.Property(next_page),加载更多,]</label>
                         </control>
@@ -216,87 +217,87 @@
                     <onclick condition="String.IsEmpty(Container(9802).ListItem.Property(next_page)) + !String.IsEmpty(Container(9802).ListItem.Property(comment_reply_summary))">AlarmClock(open_replies,ActivateWindow(1162),00:00,silent)</onclick>
                     <content>$INFO[Window(10000).Property(bili_latest_comment_url)]</content>
 
-                    <itemlayout width="420" height="350">
+                    <itemlayout width="420" height="700">
                         <control type="image">
                             <texture colordiffuse="panel_background" border="20">common/box.png</texture>
                         </control>
                         <control type="image">
-                            <left>16</left><top>10</top><width>40</width><height>40</height>
+                            <left>16</left><top>10</top><width>64</width><height>64</height>
                             <texture background="true">$INFO[ListItem.Icon]</texture>
                             <aspectratio>keep</aspectratio>
                         </control>
                         <control type="label">
-                            <left>64</left><top>10</top><width>340</width><height>24</height>
-                            <font>Reg20</font><textcolor>text_white</textcolor>
+                            <left>92</left><top>10</top><width>310</width><height>40</height>
+                            <font>Reg22</font><textcolor>text_white</textcolor>
                             <label>$INFO[ListItem.Label]</label>
                         </control>
                         <control type="label">
-                            <left>64</left><top>32</top><width>340</width><height>20</height>
-                            <font>Reg16</font><textcolor>text_sublabel</textcolor>
+                            <left>92</left><top>46</top><width>310</width><height>32</height>
+                            <font>Reg18</font><textcolor>text_sublabel</textcolor>
                             <label>$INFO[ListItem.Property(comment_time)]$INFO[ListItem.Property(comment_location), | 来自,]</label>
                         </control>
                         <control type="textbox">
-                            <left>16</left><top>58</top><width>388</width><bottom>40</bottom>
-                            <font>Reg16</font><textcolor>white</textcolor>
+                            <left>16</left><top>86</top><width>388</width><bottom>60</bottom>
+                            <font>Reg18</font><textcolor>white</textcolor>
                             <label>$INFO[ListItem.Property(comment_content)]</label>
                             <autoscroll delay="6000" time="3000" repeat="10000">!Control.HasFocus(9802)</autoscroll>
                         </control>
                         <control type="label">
-                            <left>16</left><bottom>8</bottom><width>auto</width><height>20</height>
-                            <font>Reg16</font><textcolor>text_sublabel</textcolor>
+                            <left>16</left><bottom>8</bottom><width>auto</width><height>32</height>
+                            <font>Reg18</font><textcolor>text_sublabel</textcolor>
                             <label>$INFO[ListItem.Property(comment_liked_count),&#x2764; ,]$INFO[ListItem.Property(comment_reply_count), | , replies]</label>
                         </control>
                         <control type="label" condition="!String.IsEmpty(ListItem.Property(comment_reply_summary))">
-                            <left>16</left><bottom>28</bottom><width>388</width><height>20</height>
-                            <font>Reg16</font><textcolor>softgrey</textcolor>
+                            <left>16</left><bottom>40</bottom><width>388</width><height>32</height>
+                            <font>Reg18</font><textcolor>softgrey</textcolor>
                             <label>$INFO[ListItem.Property(comment_reply_summary),&#x21AA; ,]</label>
                         </control>
                         <control type="label">
-                            <left>20</left><top>0</top><width>388</width><height>300</height>
-                            <font>Reg24</font><textcolor>text_sublabel</textcolor>
+                            <left>20</left><top>0</top><width>388</width><height>600</height>
+                            <font>Reg28</font><textcolor>text_sublabel</textcolor>
                             <align>center</align><aligny>center</aligny>
                             <label>$INFO[ListItem.Property(next_page),加载更多,]</label>
                         </control>
                     </itemlayout>
 
-                    <focusedlayout width="420" height="350">
+                    <focusedlayout width="420" height="700">
                         <control type="image">
                             <texture colordiffuse="$VAR[PlayerAccentColor]" border="20">common/box.png</texture>
                         </control>
                         <control type="image">
-                            <left>16</left><top>10</top><width>40</width><height>40</height>
+                            <left>16</left><top>10</top><width>64</width><height>64</height>
                             <texture background="true">$INFO[ListItem.Icon]</texture>
                             <aspectratio>keep</aspectratio>
                         </control>
                         <control type="label">
-                            <left>64</left><top>10</top><width>340</width><height>24</height>
-                            <font>Reg20</font><textcolor>selected</textcolor>
+                            <left>92</left><top>10</top><width>310</width><height>40</height>
+                            <font>Reg22</font><textcolor>selected</textcolor>
                             <label>$INFO[ListItem.Label]</label>
                         </control>
                         <control type="label">
-                            <left>64</left><top>32</top><width>340</width><height>20</height>
-                            <font>Reg16</font><textcolor>selected</textcolor>
+                            <left>92</left><top>46</top><width>310</width><height>32</height>
+                            <font>Reg18</font><textcolor>selected</textcolor>
                             <label>$INFO[ListItem.Property(comment_time)]$INFO[ListItem.Property(comment_location), | 来自,]</label>
                         </control>
                         <control type="textbox">
-                            <left>16</left><top>58</top><width>388</width><bottom>40</bottom>
-                            <font>Reg16</font><textcolor>white</textcolor>
+                            <left>16</left><top>86</top><width>388</width><bottom>60</bottom>
+                            <font>Reg18</font><textcolor>white</textcolor>
                             <label>$INFO[ListItem.Property(comment_content)]</label>
                             <autoscroll delay="6000" time="3000" repeat="10000">!Control.HasFocus(9802)</autoscroll>
                         </control>
                         <control type="label">
-                            <left>16</left><bottom>8</bottom><width>auto</width><height>20</height>
-                            <font>Reg16</font><textcolor>selected</textcolor>
+                            <left>16</left><bottom>8</bottom><width>auto</width><height>32</height>
+                            <font>Reg18</font><textcolor>selected</textcolor>
                             <label>$INFO[ListItem.Property(comment_liked_count),&#x2764; ,]$INFO[ListItem.Property(comment_reply_count), | , replies]</label>
                         </control>
                         <control type="label" condition="!String.IsEmpty(ListItem.Property(comment_reply_summary))">
-                            <left>16</left><bottom>28</bottom><width>388</width><height>20</height>
-                            <font>Reg16</font><textcolor>selected</textcolor>
+                            <left>16</left><bottom>40</bottom><width>388</width><height>32</height>
+                            <font>Reg18</font><textcolor>selected</textcolor>
                             <label>$INFO[ListItem.Property(comment_reply_summary),&#x21AA; ,]</label>
                         </control>
                         <control type="label">
-                            <left>20</left><top>0</top><width>388</width><height>300</height>
-                            <font>Reg24</font><textcolor>selected</textcolor>
+                            <left>20</left><top>0</top><width>388</width><height>600</height>
+                            <font>Reg28</font><textcolor>selected</textcolor>
                             <align>center</align><aligny>center</aligny>
                             <label>$INFO[ListItem.Property(next_page),加载更多,]</label>
                         </control>
