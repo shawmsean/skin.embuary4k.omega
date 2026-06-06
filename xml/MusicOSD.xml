@@ -6,6 +6,7 @@
 	<controls>
 		<!--Bottom-->
 		<control type="group" id="1">
+			<visible>!Window.IsActive(1155)</visible>
 			<bottom>0</bottom>
 			<control type="grouplist" id="600">
 				<orientation>horizontal</orientation>
@@ -126,7 +127,7 @@
 		</include>
 		<!-- Menu -->
 		<control type="group">
-			<visible>ControlGroup(700).HasFocus + !Window.IsVisible(DialogSettings.xml) + !Window.IsVisible(playerprocessinfo) + !Window.IsVisible(visualisationpresetlist)</visible>
+			<visible>ControlGroup(700).HasFocus + !Window.IsVisible(DialogSettings.xml) + !Window.IsVisible(playerprocessinfo) + !Window.IsVisible(visualisationpresetlist) + !Window.IsActive(1155)</visible>
 			<include>Visible_PopupOpenClose</include>
 			<centerleft>50%</centerleft>
 			<width>500</width>
