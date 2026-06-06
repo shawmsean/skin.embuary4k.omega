@@ -9,6 +9,10 @@
         </control>
 
         <control type="button" id="8000">
+            <left>160</left>
+            <top>120</top>
+            <width>3520</width>
+            <height>800</height>
             <texturenofocus />
             <texturefocus />
             <font />
@@ -20,6 +24,7 @@
 
         <!-- 头部：歌手头像+简介 -->
         <control type="group">
+            <visible>!ControlGroup(5000).HasFocus()</visible>
             <left>160</left>
             <right>160</right>
             <top>120</top>
