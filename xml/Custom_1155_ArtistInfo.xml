@@ -91,8 +91,7 @@
                 <bottom>120</bottom>
                 <itemgap>20</itemgap>
                 <scrolltime>300</scrolltime>
-                <onup>8000</onup>
-                <onback>8000</onback>
+
 
                 <!-- 热门50首 -->
                 <control type="group">
@@ -110,6 +109,7 @@
                         <movement>5</movement>
                         <preloaditems>0</preloaditems>
                         <content>plugin://$VAR[Action_MusicOSD_CommentPlugin]/hot_songs/$INFO[Window(10000).Property(nc_current_artist_id)]/</content>
+                    <onup>8000</onup>
 
                         <itemlayout width="420" height="540">
                             <control type="image">
