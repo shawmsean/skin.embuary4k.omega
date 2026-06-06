@@ -217,6 +217,12 @@
 					<onclick>PlayerControl(Repeat)</onclick>
 					<visible>Integer.IsGreater(Playlist.Length(video),1)</visible>
 				</control>
+				<control type="button" id="705">
+					<include content="ContextButton"/>
+					<label>弹幕设置</label>
+					<onclick>Addon.OpenSettings(script.subtitles.danmu)</onclick>
+					<visible>System.HasAddon(script.subtitles.danmu)</visible>
+				</control>
 				<control type="image">
 					<width>100%</width>
 					<height>61</height>

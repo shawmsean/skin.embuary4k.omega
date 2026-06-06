@@ -96,6 +96,17 @@
 		<value condition="String.IsEqual(Window(10000).Property(nc_music_plugin_id),plugin.audio.musicJH)">plugin.audio.musicJH</value>
 		<value>plugin.audio.music</value>
 	</variable>
+	<variable name="Action_MusicOSD_Main_OnDown">
+		<value condition="!Skin.HasSetting(MusicOSD.OnDown.Disable1142)">1142</value>
+		<value>$VAR[Action_MusicOSD_1142_OnDown]</value>
+	</variable>
+	<variable name="Action_MusicOSD_1142_OnDown">
+		<value condition="!Skin.HasSetting(MusicOSD.OnDown.Disable1144)">1144</value>
+		<value>$VAR[Action_MusicOSD_1144_OnDown]</value>
+	</variable>
+	<variable name="Action_MusicOSD_1144_OnDown">
+		<value condition="!Skin.HasSetting(MusicOSD.OnDown.Disable1149)">1149</value>
+	</variable>
 	<variable name="ThumbFallbackColor">
 		<value condition="!String.IsEmpty(Skin.String(color_thumb_fallback)) + !String.IsEqual(Skin.String(color_thumb_fallback),None)">$INFO[Skin.String(color_thumb_fallback)]</value>
 		<value>thumb_background_fallback</value>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1144">
+    <zorder>0</zorder>
+    <defaultcontrol always="true">7000</defaultcontrol>
+    <onload>CancelAlarm(osd_timeout,true)</onload>
+    <onload>RunPlugin(plugin://$VAR[Action_MusicOSD_CommentPlugin]/playlist_focus_current/)</onload>
+    <controls>
+
+        <control type="image">
+            <visible>!Skin.HasSetting(CommentOverlayDisabled)</visible>
+            <texture colordiffuse="B2000000">common/black.png</texture>
+        </control>
+
+        <control type="group">
+            <left>160</left>
+            <right>160</right>
+            <height>1440</height>
+            <centertop>50%</centertop>
+
+            <control type="group">
+                <height>120</height>
+                <control type="label">
+                    <left>0</left><top>0</top><width>100%</width><height>80</height>
+                    <font>Reg37</font><textcolor>text_white</textcolor>
+                    <label>$LOCALIZE[559]</label>
+                </control>
+            </control>
+
+            <control type="group">
+                <top>140</top>
+                <bottom>0</bottom>
+
+                <control type="fixedlist" id="7000">
+                    <left>0</left><right>0</right><top>0</top><bottom>120</bottom>
+                    <orientation>horizontal</orientation>
+                    <scrolltime>300</scrolltime>
+                    <focusposition>0</focusposition>
+                    <movement>5</movement>
+                    <preloaditems>0</preloaditems>
+                    <content>playlistmusic://</content>
+                    <onclick>SetProperty(nc_play_offset,$INFO[Container(7000).CurrentItem],Home)</onclick>
+                    <onclick>RunPlugin(plugin://$VAR[Action_MusicOSD_CommentPlugin]/play_playlist_offset/)</onclick>
+                    <onup condition="!Skin.HasSetting(MusicOSD.OnDown.Disable1142)">SetProperty(bili_comment_content_url,plugin://$VAR[Action_MusicOSD_CommentPlugin]/current_song_comments/0,10000)</onup>
+                    <onup condition="!Skin.HasSetting(MusicOSD.OnDown.Disable1142)">SetProperty(bili_hot_comment_url,plugin://$VAR[Action_MusicOSD_CommentPlugin]/hot_song_comments/0/,10000)</onup>
+                    <onup condition="!Skin.HasSetting(MusicOSD.OnDown.Disable1142)">SetProperty(bili_latest_comment_url,plugin://$VAR[Action_MusicOSD_CommentPlugin]/latest_song_comments/0/,10000)</onup>
+                    <onup condition="!Skin.HasSetting(MusicOSD.OnDown.Disable1142)">Close</onup>
+                    <onup condition="!Skin.HasSetting(MusicOSD.OnDown.Disable1142)">AlarmClock(musicosd_nav,ActivateWindow(1142),00:00,silent)</onup>
+                    <onup>Close</onup>
+                    <ondown>Close</ondown>
+                    <ondown>AlarmClock(musicosd_nav,ActivateWindow($VAR[Action_MusicOSD_1144_OnDown]),00:00,silent)</ondown>
+
+                    <itemlayout width="420" height="560">
+                        <control type="image">
+                            <texture colordiffuse="panel_background" border="20">common/box.png</texture>
+                        </control>
+                        <control type="image">
+                            <left>16</left><top>16</top><width>388</width><height>388</height>
+                            <texture background="true">$INFO[ListItem.Icon]</texture>
+                            <aspectratio>scale</aspectratio>
+                        </control>
+                        <control type="label">
+                            <left>16</left><top>416</top><width>388</width><height>60</height>
+                            <font>Reg22</font><textcolor>text_white</textcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                            <scroll>true</scroll>
+                        </control>
+                        <control type="label">
+                            <left>16</left><top>470</top><width>388</width><height>50</height>
+                            <font>Reg18</font><textcolor>text_sublabel</textcolor>
+                            <label>$INFO[ListItem.Artist]</label>
+                        </control>
+                        <control type="label">
+                            <left>16</left><top>516</top><width>388</width><height>40</height>
+                            <font>Reg18</font><textcolor>text_sublabel</textcolor>
+                            <label>$INFO[ListItem.Duration]</label>
+                        </control>
+                    </itemlayout>
+
+                    <focusedlayout width="420" height="560">
+                        <control type="image">
+                            <texture colordiffuse="$VAR[PlayerAccentColor]" border="20">common/box.png</texture>
+                        </control>
+                        <control type="image">
+                            <left>16</left><top>16</top><width>388</width><height>388</height>
+                            <texture background="true">$INFO[ListItem.Icon]</texture>
+                            <aspectratio>scale</aspectratio>
+                        </control>
+                        <control type="label">
+                            <left>16</left><top>416</top><width>388</width><height>60</height>
+                            <font>Reg22</font><textcolor>selected</textcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                            <scroll>true</scroll>
+                        </control>
+                        <control type="label">
+                            <left>16</left><top>470</top><width>388</width><height>50</height>
+                            <font>Reg18</font><textcolor>selected</textcolor>
+                            <label>$INFO[ListItem.Artist]</label>
+                        </control>
+                        <control type="label">
+                            <left>16</left><top>516</top><width>388</width><height>40</height>
+                            <font>Reg18</font><textcolor>selected</textcolor>
+                            <label>$INFO[ListItem.Duration]</label>
+                        </control>
+                    </focusedlayout>
+                </control>
+
+                <control type="group">
+                    <bottom>0</bottom>
+                    <height>120</height>
+                    <control type="image">
+                        <left>0</left><top>0</top><width>120</width><height>120</height>
+                        <texture background="true">$INFO[Container(7000).ListItem.Icon]</texture>
+                        <aspectratio>keep</aspectratio>
+                    </control>
+                    <control type="label">
+                        <left>140</left><top>0</top><width>auto</width><height>50</height>
+                        <font>Reg24</font><textcolor>text_white</textcolor>
+                        <label>$INFO[Container(7000).ListItem.Label]</label>
+                    </control>
+                    <control type="label">
+                        <left>140</left><top>50</top><width>auto</width><height>40</height>
+                        <font>Reg20</font><textcolor>text_sublabel</textcolor>
+                        <label>$INFO[Container(7000).ListItem.Artist]</label>
+                    </control>
+                </control>
+            </control>
+        </control>
+
+    </controls>
+</window>

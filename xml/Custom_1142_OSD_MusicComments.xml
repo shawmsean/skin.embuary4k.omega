@@ -84,6 +84,9 @@
                     <preloaditems>0</preloaditems>
                     <onup>SetProperty(bili_comment_tab,latest,Home)</onup>
                     <onup>AlarmClock(cmt_tab,SetFocus(9802),00:00,silent)</onup>
+                    <ondown>SetProperty(musicosd_nav_dir,down,Home)</ondown>
+                    <ondown>Close</ondown>
+                    <ondown>AlarmClock(musicosd_nav,ActivateWindow($VAR[Action_MusicOSD_1142_OnDown]),00:00,silent)</ondown>
                     <onleft>Close</onleft>
                     <onright condition="!String.IsEmpty(Container(9801).ListItem.Property(next_page))">SetProperty(bili_hot_comment_url,$INFO[Container(9801).ListItem.Property(next_page)],10000)</onright>
                     <onright condition="!String.IsEmpty(Container(9801).ListItem.Property(next_page))">Container.Update($INFO[Container(9801).ListItem.Property(next_page)],replace)</onright>
@@ -204,6 +207,9 @@
                     <preloaditems>0</preloaditems>
                     <onup>SetProperty(bili_comment_tab,hot,Home)</onup>
                     <onup>AlarmClock(cmt_tab,SetFocus(9801),00:00,silent)</onup>
+                    <ondown>SetProperty(musicosd_nav_dir,down,Home)</ondown>
+                    <ondown>Close</ondown>
+                    <ondown>AlarmClock(musicosd_nav,ActivateWindow($VAR[Action_MusicOSD_1142_OnDown]),00:00,silent)</ondown>
                     <onleft>Close</onleft>
                     <onright condition="!String.IsEmpty(Container(9802).ListItem.Property(next_page))">SetProperty(bili_latest_comment_url,$INFO[Container(9802).ListItem.Property(next_page)],10000)</onright>
                     <onright condition="!String.IsEmpty(Container(9802).ListItem.Property(next_page))">Container.Update($INFO[Container(9802).ListItem.Property(next_page)],replace)</onright>

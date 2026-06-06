@@ -2026,39 +2026,7 @@
 			<property name="list">musicdb://albums/</property>
 			<property name="useFakeArt">true</property>
 			<property name="aspectRatio">keep</property>
-			<visible>[Library.HasContent(music)
-		| [System.HasAddon(plugin.video.embycon) + [
-		String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.0.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.1.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.2.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.3.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.4.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.5.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.6.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.7.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.8.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.9.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.10.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.11.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.12.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.13.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.14.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.15.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.16.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.17.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.18.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.19.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.20.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.21.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.22.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.23.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.24.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.25.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.26.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.27.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.28.type),music)
-		| String.IsEqual(Window(home).Property(plugin.video.embycon-view_item.29.type),music)
-		]]]</visible>
+			<visible>true</visible>
 			<onclick condition="true">Dialog.Close(all,true)</onclick>
 			<onclick>ActivateWindow(1122,return)</onclick>
 			<property name="path">ActivateWindow(1122,return)</property>
