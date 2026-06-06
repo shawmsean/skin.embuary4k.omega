@@ -108,7 +108,7 @@
                         <focusposition>0</focusposition>
                         <movement>5</movement>
                         <preloaditems>0</preloaditems>
-                        <content>plugin://$VAR[Action_MusicOSD_CommentPlugin]/hot_songs/$INFO[Window(10000).Property(nc_current_artist_id)]/</content>
+                        <content>plugin://plugin.audio.music/hot_songs/$INFO[Window(10000).Property(nc_current_artist_id)]/</content>
                         <onup>8000</onup>
                         <ondown>5002</ondown>
 
@@ -183,7 +183,7 @@
                         <focusposition>0</focusposition>
                         <movement>5</movement>
                         <preloaditems>0</preloaditems>
-                        <content>plugin://$VAR[Action_MusicOSD_CommentPlugin]/albums/$INFO[Window(10000).Property(nc_current_artist_id)]/0/</content>
+                        <content>plugin://plugin.audio.music/albums/$INFO[Window(10000).Property(nc_current_artist_id)]/0/</content>
                         <onup>5001</onup>
                         <ondown>5003</ondown>
 
@@ -258,7 +258,7 @@
                         <focusposition>0</focusposition>
                         <movement>5</movement>
                         <preloaditems>0</preloaditems>
-                        <content>plugin://$VAR[Action_MusicOSD_CommentPlugin]/artist_songs/$INFO[Window(10000).Property(nc_current_artist_id)]/0/</content>
+                        <content>plugin://plugin.audio.music/artist_songs/$INFO[Window(10000).Property(nc_current_artist_id)]/0/</content>
                         <onup>5002</onup>
                         <ondown>5004</ondown>
 
@@ -333,7 +333,7 @@
                         <focusposition>0</focusposition>
                         <movement>5</movement>
                         <preloaditems>0</preloaditems>
-                        <content>plugin://$VAR[Action_MusicOSD_CommentPlugin]/artist_mvs/$INFO[Window(10000).Property(nc_current_artist_id)]/0/</content>
+                        <content>plugin://plugin.audio.music/artist_mvs/$INFO[Window(10000).Property(nc_current_artist_id)]/0/</content>
                         <onup>5003</onup>
                         <ondown>5005</ondown>
 
@@ -408,9 +408,9 @@
                         <focusposition>0</focusposition>
                         <movement>5</movement>
                         <preloaditems>0</preloaditems>
-                        <content>plugin://$VAR[Action_MusicOSD_CommentPlugin]/similar_artist/$INFO[Window(10000).Property(nc_current_artist_id)]/0/</content>
+                        <content>plugin://plugin.audio.music/similar_artist/$INFO[Window(10000).Property(nc_current_artist_id)]/0/</content>
                         <onup>5004</onup>
-                        <onclick condition="!String.IsEmpty(ListItem.Property(artist_id))">RunPlugin(plugin://$VAR[Action_MusicOSD_CommentPlugin]/set_artist_info/$INFO[ListItem.Property(artist_id)]/)</onclick>
+                        <onclick condition="!String.IsEmpty(ListItem.Property(artist_id))">RunPlugin(plugin://plugin.audio.music/set_artist_info/$INFO[ListItem.Property(artist_id)]/)</onclick>
                         <onclick condition="!String.IsEmpty(ListItem.Property(artist_id))">SetProperty(nc_current_artist_id,$INFO[ListItem.Property(artist_id)],10000)</onclick>
                         <onclick condition="!String.IsEmpty(ListItem.Property(artist_id))">SetProperty(nc_current_artist_name,$INFO[ListItem.Label],10000)</onclick>
                         <onclick condition="!String.IsEmpty(ListItem.Property(artist_id))">SetProperty(nc_current_artist_pic,$INFO[ListItem.Icon],10000)</onclick>
