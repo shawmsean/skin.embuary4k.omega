@@ -103,6 +103,10 @@
                         <texture colordiffuse="$VAR[PlayerAccentColor]" border="12">common/box.png</texture>
                     </control>
                     <control type="image">
+                        <left>6</left><top>6</top><right>6</right><bottom>6</bottom>
+                        <texture colordiffuse="panel_background" border="8">common/box.png</texture>
+                    </control>
+                    <control type="image">
                         <visible>!String.IsEqual(ListItem.Property(is_trigger),1)</visible>
                         <left>12</left><top>12</top><width>56</width><height>56</height>
                         <texture background="true">$INFO[ListItem.Icon]</texture>

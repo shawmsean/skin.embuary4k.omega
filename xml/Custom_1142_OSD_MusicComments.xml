@@ -152,6 +152,10 @@
                         <control type="image">
                             <texture colordiffuse="$VAR[PlayerAccentColor]" border="20">common/box.png</texture>
                         </control>
+                        <control type="image">
+                            <left>6</left><top>6</top><right>6</right><bottom>6</bottom>
+                            <texture colordiffuse="panel_background" border="16">common/box.png</texture>
+                        </control>
                         <control type="label">
                             <left>16</left><top>10</top><width>auto</width><height>40</height>
                             <font>Reg22</font><textcolor>selected</textcolor>
@@ -269,6 +273,10 @@
                     <focusedlayout width="420" height="700">
                         <control type="image">
                             <texture colordiffuse="$VAR[PlayerAccentColor]" border="20">common/box.png</texture>
+                        </control>
+                        <control type="image">
+                            <left>6</left><top>6</top><right>6</right><bottom>6</bottom>
+                            <texture colordiffuse="panel_background" border="16">common/box.png</texture>
                         </control>
                         <control type="image">
                             <left>16</left><top>10</top><width>64</width><height>64</height>

@@ -81,6 +81,10 @@
                             <texture colordiffuse="$VAR[PlayerAccentColor]" border="20">common/box.png</texture>
                         </control>
                         <control type="image">
+                            <left>6</left><top>6</top><right>6</right><bottom>6</bottom>
+                            <texture colordiffuse="panel_background" border="16">common/box.png</texture>
+                        </control>
+                        <control type="image">
                             <left>16</left><top>16</top><width>388</width><height>388</height>
                             <texture background="true">$INFO[ListItem.Icon]</texture>
                             <aspectratio>scale</aspectratio>
