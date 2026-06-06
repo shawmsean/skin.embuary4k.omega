@@ -20,21 +20,20 @@
 
         <!-- 头部：歌手头像+简介 -->
         <control type="group">
-            <visible>!ControlGroup(5000).HasFocus()</visible>
             <left>160</left>
             <right>160</right>
             <top>120</top>
-            <bottom>120</bottom>
+            <height>800</height>
 
             <!-- 右侧方形头像 -->
             <control type="group">
                 <right>0</right>
-                <width>960</width>
-                <height>960</height>
-                <centertop>560</centertop>
+                <width>600</width>
+                <height>600</height>
+                <centertop>400</centertop>
                 <control type="image">
-                    <width>960</width>
-                    <height>960</height>
+                    <width>600</width>
+                    <height>600</height>
                     <texture background="true">$INFO[Window(10000).Property(nc_current_artist_pic)]</texture>
                     <aspectratio>scale</aspectratio>
                 </control>
@@ -42,10 +41,10 @@
 
             <!-- 左侧歌手名+简介+统计 -->
             <control type="group">
-                <right>1000</right>
-                <left>-40</left>
-                <centertop>500</centertop>
-                <height>880</height>
+                <right>680</right>
+                <left>0</left>
+                <top>80</top>
+                <height>680</height>
 
                 <control type="label">
                     <left>0</left>
@@ -59,17 +58,17 @@
                 <control type="textbox">
                     <left>0</left>
                     <top>140</top>
-                    <height>600</height>
-                    <width>92%</width>
+                    <height>440</height>
+                    <width>100%</width>
                     <font>Reg20</font>
-                    <textcolor>80ff80</textcolor>
+                    <textcolor>text_sublabel</textcolor>
                     <label>$INFO[Window(10000).Property(nc_current_artist_desc)]</label>
                     <autoscroll delay="5000" time="2000" repeat="10000">!Control.HasFocus(8000)</autoscroll>
                 </control>
 
                 <control type="label">
                     <left>0</left>
-                    <top>760</top>
+                    <top>600</top>
                     <height>50</height>
                     <font>Reg18</font>
                     <textcolor>text_sublabel</textcolor>
@@ -83,15 +82,16 @@
             <orientation>vertical</orientation>
             <left>160</left>
             <right>160</right>
+            <top>960</top>
             <bottom>120</bottom>
-            <height>1200</height>
             <itemgap>20</itemgap>
             <onup>8000</onup>
             <onback>8000</onback>
+            <scrolltime>300</scrolltime>
 
             <!-- 热门50首 -->
             <control type="group">
-                <height>1200</height>
+                <height>620</height>
                 <control type="label">
                     <left>0</left><top>0</top><width>auto</width><height>60</height>
                     <font>Reg28</font><textcolor>text_white</textcolor>
@@ -107,7 +107,7 @@
                     <content>plugin://$VAR[Action_MusicOSD_CommentPlugin]/hot_songs/$INFO[Window(10000).Property(nc_current_artist_id)]/</content>
                     <onup>8000</onup>
 
-                    <itemlayout width="420" height="560">
+                    <itemlayout width="420" height="540">
                         <control type="image">
                             <texture colordiffuse="panel_background" border="20">common/box.png</texture>
                         </control>
@@ -123,13 +123,13 @@
                             <scroll>true</scroll>
                         </control>
                         <control type="label">
-                            <left>16</left><top>470</top><width>388</width><height>50</height>
+                            <left>16</left><top>476</top><width>388</width><height>50</height>
                             <font>Reg18</font><textcolor>text_sublabel</textcolor>
                             <label>$INFO[ListItem.Artist]</label>
                         </control>
                     </itemlayout>
 
-                    <focusedlayout width="420" height="560">
+                    <focusedlayout width="420" height="540">
                         <control type="image">
                             <texture colordiffuse="$VAR[PlayerAccentColor]" border="20">common/box.png</texture>
                         </control>
@@ -145,7 +145,7 @@
                             <scroll>true</scroll>
                         </control>
                         <control type="label">
-                            <left>16</left><top>470</top><width>388</width><height>50</height>
+                            <left>16</left><top>476</top><width>388</width><height>50</height>
                             <font>Reg18</font><textcolor>selected</textcolor>
                             <label>$INFO[ListItem.Artist]</label>
                         </control>
@@ -155,7 +155,7 @@
 
             <!-- 专辑 -->
             <control type="group">
-                <height>1200</height>
+                <height>620</height>
                 <control type="label">
                     <left>0</left><top>0</top><width>auto</width><height>60</height>
                     <font>Reg28</font><textcolor>text_white</textcolor>
@@ -171,7 +171,7 @@
                     <content>plugin://$VAR[Action_MusicOSD_CommentPlugin]/albums/$INFO[Window(10000).Property(nc_current_artist_id)]/0/</content>
                     <onup>8000</onup>
 
-                    <itemlayout width="420" height="560">
+                    <itemlayout width="420" height="540">
                         <control type="image">
                             <texture colordiffuse="panel_background" border="20">common/box.png</texture>
                         </control>
@@ -187,13 +187,13 @@
                             <scroll>true</scroll>
                         </control>
                         <control type="label">
-                            <left>16</left><top>470</top><width>388</width><height>50</height>
+                            <left>16</left><top>476</top><width>388</width><height>50</height>
                             <font>Reg18</font><textcolor>text_sublabel</textcolor>
                             <label>$INFO[ListItem.Artist]</label>
                         </control>
                     </itemlayout>
 
-                    <focusedlayout width="420" height="560">
+                    <focusedlayout width="420" height="540">
                         <control type="image">
                             <texture colordiffuse="$VAR[PlayerAccentColor]" border="20">common/box.png</texture>
                         </control>
@@ -209,7 +209,7 @@
                             <scroll>true</scroll>
                         </control>
                         <control type="label">
-                            <left>16</left><top>470</top><width>388</width><height>50</height>
+                            <left>16</left><top>476</top><width>388</width><height>50</height>
                             <font>Reg18</font><textcolor>selected</textcolor>
                             <label>$INFO[ListItem.Artist]</label>
                         </control>
@@ -219,7 +219,7 @@
 
             <!-- 歌曲 -->
             <control type="group">
-                <height>1200</height>
+                <height>620</height>
                 <control type="label">
                     <left>0</left><top>0</top><width>auto</width><height>60</height>
                     <font>Reg28</font><textcolor>text_white</textcolor>
@@ -235,7 +235,7 @@
                     <content>plugin://$VAR[Action_MusicOSD_CommentPlugin]/artist_songs/$INFO[Window(10000).Property(nc_current_artist_id)]/0/</content>
                     <onup>8000</onup>
 
-                    <itemlayout width="420" height="560">
+                    <itemlayout width="420" height="540">
                         <control type="image">
                             <texture colordiffuse="panel_background" border="20">common/box.png</texture>
                         </control>
@@ -251,13 +251,13 @@
                             <scroll>true</scroll>
                         </control>
                         <control type="label">
-                            <left>16</left><top>470</top><width>388</width><height>50</height>
+                            <left>16</left><top>476</top><width>388</width><height>50</height>
                             <font>Reg18</font><textcolor>text_sublabel</textcolor>
                             <label>$INFO[ListItem.Artist]</label>
                         </control>
                     </itemlayout>
 
-                    <focusedlayout width="420" height="560">
+                    <focusedlayout width="420" height="540">
                         <control type="image">
                             <texture colordiffuse="$VAR[PlayerAccentColor]" border="20">common/box.png</texture>
                         </control>
@@ -273,7 +273,7 @@
                             <scroll>true</scroll>
                         </control>
                         <control type="label">
-                            <left>16</left><top>470</top><width>388</width><height>50</height>
+                            <left>16</left><top>476</top><width>388</width><height>50</height>
                             <font>Reg18</font><textcolor>selected</textcolor>
                             <label>$INFO[ListItem.Artist]</label>
                         </control>
@@ -283,7 +283,7 @@
 
             <!-- MV -->
             <control type="group">
-                <height>1200</height>
+                <height>620</height>
                 <control type="label">
                     <left>0</left><top>0</top><width>auto</width><height>60</height>
                     <font>Reg28</font><textcolor>text_white</textcolor>
@@ -299,45 +299,45 @@
                     <content>plugin://$VAR[Action_MusicOSD_CommentPlugin]/artist_mvs/$INFO[Window(10000).Property(nc_current_artist_id)]/0/</content>
                     <onup>8000</onup>
 
-                    <itemlayout width="840" height="560">
+                    <itemlayout width="840" height="540">
                         <control type="image">
                             <texture colordiffuse="panel_background" border="20">common/box.png</texture>
                         </control>
                         <control type="image">
-                            <left>16</left><top>16</top><width>808</width><height>380</height>
+                            <left>16</left><top>16</top><width>808</width><height>360</height>
                             <texture background="true">$INFO[ListItem.Icon]</texture>
                             <aspectratio>scale</aspectratio>
                         </control>
                         <control type="label">
-                            <left>16</left><top>410</top><width>808</width><height>60</height>
+                            <left>16</left><top>390</top><width>808</width><height>60</height>
                             <font>Reg22</font><textcolor>text_white</textcolor>
                             <label>$INFO[ListItem.Label]</label>
                             <scroll>true</scroll>
                         </control>
                         <control type="label">
-                            <left>16</left><top>470</top><width>808</width><height>50</height>
+                            <left>16</left><top>450</top><width>808</width><height>50</height>
                             <font>Reg18</font><textcolor>text_sublabel</textcolor>
                             <label>$INFO[ListItem.Artist]</label>
                         </control>
                     </itemlayout>
 
-                    <focusedlayout width="840" height="560">
+                    <focusedlayout width="840" height="540">
                         <control type="image">
                             <texture colordiffuse="$VAR[PlayerAccentColor]" border="20">common/box.png</texture>
                         </control>
                         <control type="image">
-                            <left>16</left><top>16</top><width>808</width><height>380</height>
+                            <left>16</left><top>16</top><width>808</width><height>360</height>
                             <texture background="true">$INFO[ListItem.Icon]</texture>
                             <aspectratio>scale</aspectratio>
                         </control>
                         <control type="label">
-                            <left>16</left><top>410</top><width>808</width><height>60</height>
+                            <left>16</left><top>390</top><width>808</width><height>60</height>
                             <font>Reg22</font><textcolor>selected</textcolor>
                             <label>$INFO[ListItem.Label]</label>
                             <scroll>true</scroll>
                         </control>
                         <control type="label">
-                            <left>16</left><top>470</top><width>808</width><height>50</height>
+                            <left>16</left><top>450</top><width>808</width><height>50</height>
                             <font>Reg18</font><textcolor>selected</textcolor>
                             <label>$INFO[ListItem.Artist]</label>
                         </control>
@@ -347,7 +347,7 @@
 
             <!-- 相似歌手 -->
             <control type="group">
-                <height>1200</height>
+                <height>620</height>
                 <control type="label">
                     <left>0</left><top>0</top><width>auto</width><height>60</height>
                     <font>Reg28</font><textcolor>text_white</textcolor>
@@ -369,7 +369,7 @@
                     <onclick condition="!String.IsEmpty(ListItem.Property(artist_id))">Close</onclick>
                     <onclick condition="!String.IsEmpty(ListItem.Property(artist_id))">AlarmClock(nav_1155,ActivateWindow(1155),00:01,silent)</onclick>
 
-                    <itemlayout width="420" height="560">
+                    <itemlayout width="420" height="540">
                         <control type="image">
                             <texture colordiffuse="panel_background" border="20">common/box.png</texture>
                         </control>
@@ -386,7 +386,7 @@
                         </control>
                     </itemlayout>
 
-                    <focusedlayout width="420" height="560">
+                    <focusedlayout width="420" height="540">
                         <control type="image">
                             <texture colordiffuse="$VAR[PlayerAccentColor]" border="20">common/box.png</texture>
                         </control>
