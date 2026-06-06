@@ -149,17 +149,22 @@
                     </itemlayout>
 
                     <focusedlayout width="420" height="700">
-                        <control type="image">
-                            <texture colordiffuse="$VAR[PlayerAccentColor]" border="20">common/box.png</texture>
-                        </control>
-                        <control type="image">
-                            <left>6</left><top>6</top><right>6</right><bottom>6</bottom>
-                            <texture colordiffuse="panel_background" border="16">common/box.png</texture>
-                        </control>
-                        <control type="label">
-                            <left>16</left><top>10</top><width>auto</width><height>40</height>
-                            <font>Reg22</font><textcolor>selected</textcolor>
-                            <label>HOT</label>
+                        <control type="group">
+                            <animation type="Focus" reversible="false">
+                                <effect type="zoom" end="110" time="75" tween="sine" easing="out" center="auto" />
+                                <effect type="zoom" end="90.9090909" time="225" tween="sine" delay="100" easing="out" center="auto" />
+                            </animation>
+                            <control type="image">
+                                <texture colordiffuse="$VAR[PlayerAccentColor]" border="20">common/box.png</texture>
+                            </control>
+                            <control type="image">
+                                <left>6</left><top>6</top><right>6</right><bottom>6</bottom>
+                                <texture colordiffuse="panel_background" border="16">common/box.png</texture>
+                            </control>
+                            <control type="label">
+                                <left>16</left><top>10</top><width>auto</width><height>40</height>
+                                <font>Reg22</font><textcolor>selected</textcolor>
+                                <label>HOT</label>
                         </control>
                         <control type="image">
                             <left>16</left><top>56</top><width>64</width><height>64</height>
@@ -192,11 +197,12 @@
                             <font>Reg18</font><textcolor>selected</textcolor>
                             <label>$INFO[ListItem.Property(comment_reply_summary),&#x21AA; ,]</label>
                         </control>
-                        <control type="label">
-                            <left>20</left><top>0</top><width>388</width><height>600</height>
-                            <font>Reg28</font><textcolor>selected</textcolor>
-                            <align>center</align><aligny>center</aligny>
-                            <label>$INFO[ListItem.Property(next_page),加载更多,]</label>
+                            <control type="label">
+                                <left>20</left><top>0</top><width>388</width><height>600</height>
+                                <font>Reg28</font><textcolor>selected</textcolor>
+                                <align>center</align><aligny>center</aligny>
+                                <label>$INFO[ListItem.Property(next_page),加载更多,]</label>
+                            </control>
                         </control>
                     </focusedlayout>
                 </control>
@@ -271,15 +277,20 @@
                     </itemlayout>
 
                     <focusedlayout width="420" height="700">
-                        <control type="image">
-                            <texture colordiffuse="$VAR[PlayerAccentColor]" border="20">common/box.png</texture>
-                        </control>
-                        <control type="image">
-                            <left>6</left><top>6</top><right>6</right><bottom>6</bottom>
-                            <texture colordiffuse="panel_background" border="16">common/box.png</texture>
-                        </control>
-                        <control type="image">
-                            <left>16</left><top>10</top><width>64</width><height>64</height>
+                        <control type="group">
+                            <animation type="Focus" reversible="false">
+                                <effect type="zoom" end="110" time="75" tween="sine" easing="out" center="auto" />
+                                <effect type="zoom" end="90.9090909" time="225" tween="sine" delay="100" easing="out" center="auto" />
+                            </animation>
+                            <control type="image">
+                                <texture colordiffuse="$VAR[PlayerAccentColor]" border="20">common/box.png</texture>
+                            </control>
+                            <control type="image">
+                                <left>6</left><top>6</top><right>6</right><bottom>6</bottom>
+                                <texture colordiffuse="panel_background" border="16">common/box.png</texture>
+                            </control>
+                            <control type="image">
+                                <left>16</left><top>10</top><width>64</width><height>64</height>
                             <texture background="true">$INFO[ListItem.Icon]</texture>
                             <aspectratio>keep</aspectratio>
                         </control>
@@ -309,11 +320,12 @@
                             <font>Reg18</font><textcolor>selected</textcolor>
                             <label>$INFO[ListItem.Property(comment_reply_summary),&#x21AA; ,]</label>
                         </control>
-                        <control type="label">
-                            <left>20</left><top>0</top><width>388</width><height>600</height>
-                            <font>Reg28</font><textcolor>selected</textcolor>
-                            <align>center</align><aligny>center</aligny>
-                            <label>$INFO[ListItem.Property(next_page),加载更多,]</label>
+                            <control type="label">
+                                <left>20</left><top>0</top><width>388</width><height>600</height>
+                                <font>Reg28</font><textcolor>selected</textcolor>
+                                <align>center</align><aligny>center</aligny>
+                                <label>$INFO[ListItem.Property(next_page),加载更多,]</label>
+                            </control>
                         </control>
                     </focusedlayout>
                 </control>

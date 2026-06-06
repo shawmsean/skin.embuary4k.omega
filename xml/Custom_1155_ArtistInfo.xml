@@ -135,13 +135,18 @@
                         </itemlayout>
 
                         <focusedlayout width="420" height="540">
-                            <control type="image">
-                                <texture colordiffuse="$VAR[PlayerAccentColor]" border="20">common/box.png</texture>
-                            </control>
-                            <control type="image">
-                                <left>6</left><top>6</top><right>6</right><bottom>6</bottom>
-                                <texture colordiffuse="panel_background" border="16">common/box.png</texture>
-                            </control>
+                            <control type="group">
+                                <animation type="Focus" reversible="false">
+                                    <effect type="zoom" end="110" time="75" tween="sine" easing="out" center="auto" />
+                                    <effect type="zoom" end="90.9090909" time="225" tween="sine" delay="100" easing="out" center="auto" />
+                                </animation>
+                                <control type="image">
+                                    <texture colordiffuse="$VAR[PlayerAccentColor]" border="20">common/box.png</texture>
+                                </control>
+                                <control type="image">
+                                    <left>6</left><top>6</top><right>6</right><bottom>6</bottom>
+                                    <texture colordiffuse="panel_background" border="16">common/box.png</texture>
+                                </control>
                             <control type="image">
                                 <left>16</left><top>16</top><width>388</width><height>388</height>
                                 <texture background="true">$INFO[ListItem.Icon]</texture>
@@ -157,6 +162,7 @@
                                 <left>16</left><top>476</top><width>388</width><height>50</height>
                                 <font>Reg18</font><textcolor>selected</textcolor>
                                 <label>$INFO[ListItem.Artist]</label>
+                            </control>
                             </control>
                         </focusedlayout>
                     </control>
@@ -204,13 +210,18 @@
                         </itemlayout>
 
                         <focusedlayout width="420" height="540">
-                            <control type="image">
-                                <texture colordiffuse="$VAR[PlayerAccentColor]" border="20">common/box.png</texture>
-                            </control>
-                            <control type="image">
-                                <left>6</left><top>6</top><right>6</right><bottom>6</bottom>
-                                <texture colordiffuse="panel_background" border="16">common/box.png</texture>
-                            </control>
+                            <control type="group">
+                                <animation type="Focus" reversible="false">
+                                    <effect type="zoom" end="110" time="75" tween="sine" easing="out" center="auto" />
+                                    <effect type="zoom" end="90.9090909" time="225" tween="sine" delay="100" easing="out" center="auto" />
+                                </animation>
+                                <control type="image">
+                                    <texture colordiffuse="$VAR[PlayerAccentColor]" border="20">common/box.png</texture>
+                                </control>
+                                <control type="image">
+                                    <left>6</left><top>6</top><right>6</right><bottom>6</bottom>
+                                    <texture colordiffuse="panel_background" border="16">common/box.png</texture>
+                                </control>
                             <control type="image">
                                 <left>16</left><top>16</top><width>388</width><height>388</height>
                                 <texture background="true">$INFO[ListItem.Icon]</texture>
@@ -226,6 +237,7 @@
                                 <left>16</left><top>476</top><width>388</width><height>50</height>
                                 <font>Reg18</font><textcolor>selected</textcolor>
                                 <label>$INFO[ListItem.Artist]</label>
+                            </control>
                             </control>
                         </focusedlayout>
                     </control>
@@ -273,13 +285,18 @@
                         </itemlayout>
 
                         <focusedlayout width="420" height="540">
-                            <control type="image">
-                                <texture colordiffuse="$VAR[PlayerAccentColor]" border="20">common/box.png</texture>
-                            </control>
-                            <control type="image">
-                                <left>6</left><top>6</top><right>6</right><bottom>6</bottom>
-                                <texture colordiffuse="panel_background" border="16">common/box.png</texture>
-                            </control>
+                            <control type="group">
+                                <animation type="Focus" reversible="false">
+                                    <effect type="zoom" end="110" time="75" tween="sine" easing="out" center="auto" />
+                                    <effect type="zoom" end="90.9090909" time="225" tween="sine" delay="100" easing="out" center="auto" />
+                                </animation>
+                                <control type="image">
+                                    <texture colordiffuse="$VAR[PlayerAccentColor]" border="20">common/box.png</texture>
+                                </control>
+                                <control type="image">
+                                    <left>6</left><top>6</top><right>6</right><bottom>6</bottom>
+                                    <texture colordiffuse="panel_background" border="16">common/box.png</texture>
+                                </control>
                             <control type="image">
                                 <left>16</left><top>16</top><width>388</width><height>388</height>
                                 <texture background="true">$INFO[ListItem.Icon]</texture>
@@ -295,6 +312,7 @@
                                 <left>16</left><top>476</top><width>388</width><height>50</height>
                                 <font>Reg18</font><textcolor>selected</textcolor>
                                 <label>$INFO[ListItem.Artist]</label>
+                            </control>
                             </control>
                         </focusedlayout>
                     </control>
@@ -342,15 +360,20 @@
                         </itemlayout>
 
                         <focusedlayout width="840" height="540">
-                            <control type="image">
-                                <texture colordiffuse="$VAR[PlayerAccentColor]" border="20">common/box.png</texture>
-                            </control>
-                            <control type="image">
-                                <left>6</left><top>6</top><right>6</right><bottom>6</bottom>
-                                <texture colordiffuse="panel_background" border="16">common/box.png</texture>
-                            </control>
-                            <control type="image">
-                                <left>16</left><top>16</top><width>808</width><height>360</height>
+                            <control type="group">
+                                <animation type="Focus" reversible="false">
+                                    <effect type="zoom" end="110" time="75" tween="sine" easing="out" center="auto" />
+                                    <effect type="zoom" end="90.9090909" time="225" tween="sine" delay="100" easing="out" center="auto" />
+                                </animation>
+                                <control type="image">
+                                    <texture colordiffuse="$VAR[PlayerAccentColor]" border="20">common/box.png</texture>
+                                </control>
+                                <control type="image">
+                                    <left>6</left><top>6</top><right>6</right><bottom>6</bottom>
+                                    <texture colordiffuse="panel_background" border="16">common/box.png</texture>
+                                </control>
+                                <control type="image">
+                                    <left>16</left><top>16</top><width>808</width><height>360</height>
                                 <texture background="true">$INFO[ListItem.Icon]</texture>
                                 <aspectratio>scale</aspectratio>
                             </control>
@@ -364,6 +387,7 @@
                                 <left>16</left><top>450</top><width>808</width><height>50</height>
                                 <font>Reg18</font><textcolor>selected</textcolor>
                                 <label>$INFO[ListItem.Artist]</label>
+                            </control>
                             </control>
                         </focusedlayout>
                     </control>
@@ -411,13 +435,18 @@
                         </itemlayout>
 
                         <focusedlayout width="420" height="540">
-                            <control type="image">
-                                <texture colordiffuse="$VAR[PlayerAccentColor]" border="20">common/box.png</texture>
-                            </control>
-                            <control type="image">
-                                <left>6</left><top>6</top><right>6</right><bottom>6</bottom>
-                                <texture colordiffuse="panel_background" border="16">common/box.png</texture>
-                            </control>
+                            <control type="group">
+                                <animation type="Focus" reversible="false">
+                                    <effect type="zoom" end="110" time="75" tween="sine" easing="out" center="auto" />
+                                    <effect type="zoom" end="90.9090909" time="225" tween="sine" delay="100" easing="out" center="auto" />
+                                </animation>
+                                <control type="image">
+                                    <texture colordiffuse="$VAR[PlayerAccentColor]" border="20">common/box.png</texture>
+                                </control>
+                                <control type="image">
+                                    <left>6</left><top>6</top><right>6</right><bottom>6</bottom>
+                                    <texture colordiffuse="panel_background" border="16">common/box.png</texture>
+                                </control>
                             <control type="image">
                                 <left>66</left><top>16</top><width>288</width><height>288</height>
                                 <texture background="true">$INFO[ListItem.Icon]</texture>
@@ -428,6 +457,7 @@
                                 <font>Reg22</font><textcolor>selected</textcolor>
                                 <label>$INFO[ListItem.Label]</label>
                                 <align>center</align>
+                            </control>
                             </control>
                         </focusedlayout>
                     </control>

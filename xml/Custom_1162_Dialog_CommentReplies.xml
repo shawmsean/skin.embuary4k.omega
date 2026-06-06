@@ -99,56 +99,62 @@
                 </itemlayout>
 
                 <focusedlayout width="3520" height="100">
-                    <control type="image">
-                        <texture colordiffuse="$VAR[PlayerAccentColor]" border="12">common/box.png</texture>
-                    </control>
-                    <control type="image">
-                        <left>6</left><top>6</top><right>6</right><bottom>6</bottom>
-                        <texture colordiffuse="panel_background" border="8">common/box.png</texture>
-                    </control>
-                    <control type="image">
-                        <visible>!String.IsEqual(ListItem.Property(is_trigger),1)</visible>
-                        <left>12</left><top>12</top><width>56</width><height>56</height>
-                        <texture background="true">$INFO[ListItem.Icon]</texture>
-                        <aspectratio>keep</aspectratio>
-                    </control>
-                    <control type="label">
-                        <visible>!String.IsEqual(ListItem.Property(is_trigger),1)</visible>
-                        <left>80</left><top>6</top><width>1000</width><height>32</height>
-                        <font>Reg22</font><textcolor>selected</textcolor>
-                        <label>$INFO[ListItem.Label]</label>
-                    </control>
-                    <control type="label">
-                        <visible>!String.IsEqual(ListItem.Property(is_trigger),1)</visible>
-                        <right>20</right><top>6</top><width>auto</width><height>32</height>
-                        <font>Reg18</font><textcolor>selected</textcolor><align>right</align>
-                        <label>$INFO[ListItem.Property(reply_floor),#,]</label>
-                    </control>
-                    <control type="label">
-                        <visible>!String.IsEqual(ListItem.Property(is_trigger),1)</visible>
-                        <left>80</left><top>36</top><width>800</width><height>24</height>
-                        <font>Reg18</font><textcolor>selected</textcolor>
-                        <label>$INFO[ListItem.Property(reply_time)]$INFO[ListItem.Property(reply_location), | 来自,]</label>
-                    </control>
-                    <control type="label">
-                        <visible>!String.IsEqual(ListItem.Property(is_trigger),1)</visible>
-                        <right>20</right><top>36</top><width>auto</width><height>24</height>
-                        <font>Reg18</font><textcolor>selected</textcolor><align>right</align>
-                        <label>$INFO[ListItem.Property(reply_liked),&#x2764; ,]</label>
-                    </control>
-                    <control type="textbox">
-                        <visible>!String.IsEqual(ListItem.Property(is_trigger),1)</visible>
-                        <left>80</left><top>58</top><right>20</right><bottom>6</bottom>
-                        <font>Reg18</font><textcolor>white</textcolor>
-                        <label>$INFO[ListItem.Property(reply_content)]</label>
-                        <autoscroll delay="6000" time="3000" repeat="10000">!Control.HasFocus(7001)</autoscroll>
-                    </control>
-                    <control type="label">
-                        <visible>String.IsEqual(ListItem.Property(is_trigger),1)</visible>
-                        <left>0</left><top>0</top><width>3520</width><height>100</height>
-                        <font>Reg22</font><textcolor>selected</textcolor>
-                        <align>center</align><aligny>center</aligny>
-                        <label>加载更多</label>
+                    <control type="group">
+                        <animation type="Focus" reversible="false">
+                            <effect type="zoom" end="103" time="75" tween="sine" easing="out" center="auto" />
+                            <effect type="zoom" end="97.030303" time="225" tween="sine" delay="100" easing="out" center="auto" />
+                        </animation>
+                        <control type="image">
+                            <texture colordiffuse="$VAR[PlayerAccentColor]" border="12">common/box.png</texture>
+                        </control>
+                        <control type="image">
+                            <left>6</left><top>6</top><right>6</right><bottom>6</bottom>
+                            <texture colordiffuse="panel_background" border="8">common/box.png</texture>
+                        </control>
+                        <control type="image">
+                            <visible>!String.IsEqual(ListItem.Property(is_trigger),1)</visible>
+                            <left>12</left><top>12</top><width>56</width><height>56</height>
+                            <texture background="true">$INFO[ListItem.Icon]</texture>
+                            <aspectratio>keep</aspectratio>
+                        </control>
+                        <control type="label">
+                            <visible>!String.IsEqual(ListItem.Property(is_trigger),1)</visible>
+                            <left>80</left><top>6</top><width>1000</width><height>32</height>
+                            <font>Reg22</font><textcolor>selected</textcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                        <control type="label">
+                            <visible>!String.IsEqual(ListItem.Property(is_trigger),1)</visible>
+                            <right>20</right><top>6</top><width>auto</width><height>32</height>
+                            <font>Reg18</font><textcolor>selected</textcolor><align>right</align>
+                            <label>$INFO[ListItem.Property(reply_floor),#,]</label>
+                        </control>
+                        <control type="label">
+                            <visible>!String.IsEqual(ListItem.Property(is_trigger),1)</visible>
+                            <left>80</left><top>36</top><width>800</width><height>24</height>
+                            <font>Reg18</font><textcolor>selected</textcolor>
+                            <label>$INFO[ListItem.Property(reply_time)]$INFO[ListItem.Property(reply_location), | 来自,]</label>
+                        </control>
+                        <control type="label">
+                            <visible>!String.IsEqual(ListItem.Property(is_trigger),1)</visible>
+                            <right>20</right><top>36</top><width>auto</width><height>24</height>
+                            <font>Reg18</font><textcolor>selected</textcolor><align>right</align>
+                            <label>$INFO[ListItem.Property(reply_liked),&#x2764; ,]</label>
+                        </control>
+                        <control type="textbox">
+                            <visible>!String.IsEqual(ListItem.Property(is_trigger),1)</visible>
+                            <left>80</left><top>58</top><right>20</right><bottom>6</bottom>
+                            <font>Reg18</font><textcolor>white</textcolor>
+                            <label>$INFO[ListItem.Property(reply_content)]</label>
+                            <autoscroll delay="6000" time="3000" repeat="10000">!Control.HasFocus(7001)</autoscroll>
+                        </control>
+                        <control type="label">
+                            <visible>String.IsEqual(ListItem.Property(is_trigger),1)</visible>
+                            <left>0</left><top>0</top><width>3520</width><height>100</height>
+                            <font>Reg22</font><textcolor>selected</textcolor>
+                            <align>center</align><aligny>center</aligny>
+                            <label>加载更多</label>
+                        </control>
                     </control>
                 </focusedlayout>
             </control>
