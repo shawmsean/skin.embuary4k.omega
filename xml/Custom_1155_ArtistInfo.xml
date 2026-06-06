@@ -16,8 +16,8 @@
             <texturenofocus />
             <texturefocus />
             <font />
-            <ondown>5000</ondown>
-            <onup>5000</onup>
+            <ondown>5001</ondown>
+            <onup>5001</onup>
             <onleft>61</onleft>
             <onright>61</onright>
         </control>
@@ -30,7 +30,6 @@
             <top>120</top>
             <height>800</height>
 
-            <!-- 右侧方形头像 -->
             <control type="group">
                 <right>0</right>
                 <width>600</width>
@@ -44,7 +43,6 @@
                 </control>
             </control>
 
-            <!-- 左侧歌手名+简介+统计 -->
             <control type="group">
                 <right>680</right>
                 <left>0</left>
@@ -87,12 +85,9 @@
             <orientation>vertical</orientation>
             <left>160</left>
             <right>160</right>
-            <top condition="!Control.HasFocus(8000)">120</top>
-            <top condition="Control.HasFocus(8000)">960</top>
+            <top>120</top>
             <bottom>120</bottom>
             <itemgap>20</itemgap>
-            <onup>8000</onup>
-            <onback>8000</onback>
             <scrolltime>300</scrolltime>
 
             <!-- 热门50首 -->
@@ -176,7 +171,6 @@
                     <preloaditems>0</preloaditems>
                     <content>plugin://$VAR[Action_MusicOSD_CommentPlugin]/albums/$INFO[Window(10000).Property(nc_current_artist_id)]/0/</content>
 
-
                     <itemlayout width="420" height="540">
                         <control type="image">
                             <texture colordiffuse="panel_background" border="20">common/box.png</texture>
@@ -239,7 +233,6 @@
                     <movement>5</movement>
                     <preloaditems>0</preloaditems>
                     <content>plugin://$VAR[Action_MusicOSD_CommentPlugin]/artist_songs/$INFO[Window(10000).Property(nc_current_artist_id)]/0/</content>
-
 
                     <itemlayout width="420" height="540">
                         <control type="image">
@@ -304,7 +297,6 @@
                     <preloaditems>0</preloaditems>
                     <content>plugin://$VAR[Action_MusicOSD_CommentPlugin]/artist_mvs/$INFO[Window(10000).Property(nc_current_artist_id)]/0/</content>
 
-
                     <itemlayout width="840" height="540">
                         <control type="image">
                             <texture colordiffuse="panel_background" border="20">common/box.png</texture>
@@ -367,7 +359,6 @@
                     <movement>5</movement>
                     <preloaditems>0</preloaditems>
                     <content>plugin://$VAR[Action_MusicOSD_CommentPlugin]/similar_artist/$INFO[Window(10000).Property(nc_current_artist_id)]/0/</content>
-
                     <onclick condition="!String.IsEmpty(ListItem.Property(artist_id))">RunPlugin(plugin://$VAR[Action_MusicOSD_CommentPlugin]/set_artist_info/$INFO[ListItem.Property(artist_id)]/)</onclick>
                     <onclick condition="!String.IsEmpty(ListItem.Property(artist_id))">SetProperty(nc_current_artist_id,$INFO[ListItem.Property(artist_id)],10000)</onclick>
                     <onclick condition="!String.IsEmpty(ListItem.Property(artist_id))">SetProperty(nc_current_artist_name,$INFO[ListItem.Label],10000)</onclick>
