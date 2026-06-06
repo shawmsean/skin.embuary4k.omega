@@ -6,23 +6,23 @@
 			<centerleft>50%</centerleft>
 			<centertop>50%</centertop>
 			<width>1920</width>
-			<height>660</height>
+			<height>900</height>
 			<control type="list" id="110">
 				<left>0</left>
 				<top>0</top>
 				<width>1920</width>
-				<height>660</height>
+				<height>900</height>
 				<onleft>110</onleft>
 				<onright>110</onright>
 				<onup>110</onup>
 				<ondown>110</ondown>
 				<pagecontrol>111</pagecontrol>
 				<scrolltime easing="out" tween="sine">180</scrolltime>
-				<itemlayout width="1920" height="120">
+				<itemlayout width="1920" height="100">
 					<control type="label">
 						<left>0</left>
 						<width>1920</width>
-						<height>120</height>
+						<height>100</height>
 						<label>$INFO[ListItem.Label]</label>
 						<font>Med60</font>
 						<align>center</align>
@@ -30,11 +30,11 @@
 						<shadowcolor>ff000000</shadowcolor>
 					</control>
 				</itemlayout>
-				<focusedlayout width="1920"  height="120">
+				<focusedlayout width="1920"  height="100">
 					<control type="label">
 						<left>0</left>
 						<width>1920</width>
-						<height>120</height>
+						<height>100</height>
 						<label>$INFO[ListItem.Label]</label>
 						<font>Med60</font>
 						<align>center</align>
