@@ -18,6 +18,13 @@
 					<onright condition="Control.IsVisible(7000)">SetFocus(7000)</onright>
 					<onright condition="!Control.IsVisible(7000) + Control.IsVisible(17)">17</onright>
 					<onright>noop</onright>
+					<ondown condition="String.IsEqual(Container(50).ListItem.Property(is_trigger),1) + !String.IsEqual(Window(Home).Property(bili_auto_loading),1)">SetProperty(bili_auto_loading,1,Home)</ondown>
+					<ondown condition="String.IsEqual(Container(50).ListItem.Property(is_trigger),1) + !String.IsEqual(Window(Home).Property(bili_auto_loading),1)">SetProperty(bili_refocus_index,$INFO[Window(10000).Property(bili_trigger_index)],Home)</ondown>
+					<ondown condition="String.IsEqual(Container(50).ListItem.Property(is_trigger),1) + !String.IsEqual(Window(Home).Property(bili_auto_loading),1)">Container.Update($INFO[Container(50).ListItem.Property(next_page)],replace)</ondown>
+					<ondown condition="String.IsEqual(Container(50).ListItem.Property(is_trigger),1) + !String.IsEqual(Window(Home).Property(bili_auto_loading),1)">AlarmClock(bili_viewmode1,Container.SetViewMode(50),00:00,silent)</ondown>
+					<ondown condition="String.IsEqual(Container(50).ListItem.Property(is_trigger),1) + !String.IsEqual(Window(Home).Property(bili_auto_loading),1)">AlarmClock(bili_viewmode2,Container.SetViewMode(50),00:00.5,silent)</ondown>
+					<ondown condition="String.IsEqual(Container(50).ListItem.Property(is_trigger),1) + !String.IsEqual(Window(Home).Property(bili_auto_loading),1)">AlarmClock(bili_refocus,SetFocus(50,$INFO[Window(Home).Property(bili_refocus_index)],absolute),00:00.5,silent)</ondown>
+					<ondown condition="String.IsEqual(Container(50).ListItem.Property(is_trigger),1) + !String.IsEqual(Window(Home).Property(bili_auto_loading),1)">AlarmClock(bili_clear_loading,ClearProperty(bili_auto_loading,Home),00:02,silent)</ondown>
 					<ondown>noop</ondown>
 					<onup>SetFocus(6666)</onup>
 					<onleft>900</onleft>
@@ -30,7 +37,10 @@
 					<oninfo condition="String.IsEqual(ListItem.DBType,set) + !String.IsEmpty(Container(2001).ListItem.Label)">RunScript(script.embuary.helper,action=textviewer,header='$ESCINFO[ListItem.Title]',message='$ESCVAR[ListViewPlot]')</oninfo>
 					<oninfo condition="String.IsEqual(ListItem.DBType,musicvideo) + !String.IsEmpty(ListItem.Plot)">RunScript(script.embuary.helper,action=textviewer,header='$ESCINFO[ListItem.Title]',message='$ESCVAR[ListViewPlot]')</oninfo>
 					<itemlayout condition="[!Skin.HasSetting(HideWideLabels) | !Window.IsVisible(myvideonav.xml) | $EXP[ForceLabels]] + ![String.IsEqual(Skin.String(EPGar),4to3) + String.StartsWith(Container.Folderpath,pvr://)]" width="450" height="305">
-						<control type="group">
+						<control type="group" condition="String.IsEqual(ListItem.Property(is_trigger),1)">
+							<visible>false</visible>
+						</control>
+						<control type="group" condition="!String.IsEqual(ListItem.Property(is_trigger),1)">
 							<left>70</left>
 							<top>122</top>
 							<include content="$PARAM[layout]">
@@ -46,7 +56,14 @@
 						<include content="SetPropertyOnFocus">
 							<param name="id" value="50"/>
 						</include>
-						<control type="group">
+						<control type="group" condition="String.IsEqual(ListItem.Property(is_trigger),1)">
+							<onfocus condition="!String.IsEqual(Window(Home).Property(bili_auto_loading),1)">SetProperty(bili_auto_loading,1,Home)</onfocus>
+							<onfocus condition="!String.IsEqual(Window(Home).Property(bili_auto_loading),1)">Container.Update($INFO[ListItem.Property(next_page)],replace)</onfocus>
+							<onfocus condition="!String.IsEqual(Window(Home).Property(bili_auto_loading),1)">AlarmClock(bili_viewmode1,Container.SetViewMode(50),00:00,silent)</onfocus>
+							<onfocus condition="!String.IsEqual(Window(Home).Property(bili_auto_loading),1)">AlarmClock(bili_viewmode2,Container.SetViewMode(50),00:00.5,silent)</onfocus>
+							<onfocus condition="!String.IsEqual(Window(Home).Property(bili_auto_loading),1)">AlarmClock(bili_clear_loading,ClearProperty(bili_auto_loading,Home),00:02,silent)</onfocus>
+						</control>
+						<control type="group" condition="!String.IsEqual(ListItem.Property(is_trigger),1)">
 							<left>70</left>
 							<top>122</top>
 							<include content="$PARAM[layout]">
@@ -59,7 +76,10 @@
 						</control>
 					</focusedlayout>
 					<itemlayout condition="Skin.HasSetting(HideWideLabels) + Window.IsVisible(myvideonav.xml) + !$EXP[ForceLabels]" width="450" height="259">
-						<control type="group">
+						<control type="group" condition="String.IsEqual(ListItem.Property(is_trigger),1)">
+							<visible>false</visible>
+						</control>
+						<control type="group" condition="!String.IsEqual(ListItem.Property(is_trigger),1)">
 							<left>70</left>
 							<top>32</top>
 							<include content="$PARAM[layout]">
@@ -76,7 +96,14 @@
 						<include content="SetPropertyOnFocus">
 							<param name="id" value="50"/>
 						</include>
-						<control type="group">
+						<control type="group" condition="String.IsEqual(ListItem.Property(is_trigger),1)">
+							<onfocus condition="!String.IsEqual(Window(Home).Property(bili_auto_loading),1)">SetProperty(bili_auto_loading,1,Home)</onfocus>
+							<onfocus condition="!String.IsEqual(Window(Home).Property(bili_auto_loading),1)">Container.Update($INFO[ListItem.Property(next_page)],replace)</onfocus>
+							<onfocus condition="!String.IsEqual(Window(Home).Property(bili_auto_loading),1)">AlarmClock(bili_viewmode1,Container.SetViewMode(50),00:00,silent)</onfocus>
+							<onfocus condition="!String.IsEqual(Window(Home).Property(bili_auto_loading),1)">AlarmClock(bili_viewmode2,Container.SetViewMode(50),00:00.5,silent)</onfocus>
+							<onfocus condition="!String.IsEqual(Window(Home).Property(bili_auto_loading),1)">AlarmClock(bili_clear_loading,ClearProperty(bili_auto_loading,Home),00:02,silent)</onfocus>
+						</control>
+						<control type="group" condition="!String.IsEqual(ListItem.Property(is_trigger),1)">
 							<left>70</left>
 							<top>32</top>
 							<include content="$PARAM[layout]">
@@ -90,7 +117,10 @@
 						</control>
 					</focusedlayout>
 					<itemlayout condition="String.IsEqual(Skin.String(EPGar),4to3) + String.StartsWith(Container.Folderpath,pvr://)" width="360" height="305">
-						<control type="group">
+						<control type="group" condition="String.IsEqual(ListItem.Property(is_trigger),1)">
+							<visible>false</visible>
+						</control>
+						<control type="group" condition="!String.IsEqual(ListItem.Property(is_trigger),1)">
 							<left>70</left>
 							<top>122</top>
 							<include content="PVR4to3Layout">
@@ -106,7 +136,14 @@
 						<include content="SetPropertyOnFocus">
 							<param name="id" value="50"/>
 						</include>
-						<control type="group">
+						<control type="group" condition="String.IsEqual(ListItem.Property(is_trigger),1)">
+							<onfocus condition="!String.IsEqual(Window(Home).Property(bili_auto_loading),1)">SetProperty(bili_auto_loading,1,Home)</onfocus>
+							<onfocus condition="!String.IsEqual(Window(Home).Property(bili_auto_loading),1)">Container.Update($INFO[ListItem.Property(next_page)],replace)</onfocus>
+							<onfocus condition="!String.IsEqual(Window(Home).Property(bili_auto_loading),1)">AlarmClock(bili_viewmode1,Container.SetViewMode(50),00:00,silent)</onfocus>
+							<onfocus condition="!String.IsEqual(Window(Home).Property(bili_auto_loading),1)">AlarmClock(bili_viewmode2,Container.SetViewMode(50),00:00.5,silent)</onfocus>
+							<onfocus condition="!String.IsEqual(Window(Home).Property(bili_auto_loading),1)">AlarmClock(bili_clear_loading,ClearProperty(bili_auto_loading,Home),00:02,silent)</onfocus>
+						</control>
+						<control type="group" condition="!String.IsEqual(ListItem.Property(is_trigger),1)">
 							<left>70</left>
 							<top>122</top>
 							<include content="PVR4to3Layout">
@@ -125,6 +162,27 @@
 						<param name="limit">$PARAM[limit]</param>
 						<param name="content">$PARAM[content]</param>
 					</include>
+				</control>
+				<control type="group">
+					<visible>String.IsEqual(Window(Home).Property(bili_auto_loading),1)</visible>
+					<animation effect="fade" start="0" end="100" time="200">Visible</animation>
+					<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+					<centertop>50%</centertop>
+					<centerleft>50%</centerleft>
+					<width>120</width>
+					<height>120</height>
+					<control type="image">
+						<texture colordiffuse="80000000" border="60">dialogs/context/bg.png</texture>
+						<aspectratio>scale</aspectratio>
+					</control>
+					<control type="image">
+						<centertop>50%</centertop>
+						<centerleft>50%</centerleft>
+						<width>60</width>
+						<height>60</height>
+						<texture colordiffuse="selected">special://skin/extras/spinner.apng</texture>
+						<aspectratio>scale</aspectratio>
+					</control>
 				</control>
 			</control>
 		</definition>
